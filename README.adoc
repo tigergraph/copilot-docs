@@ -1,0 +1,7 @@
+= TigerGraph Co-Pilot Documentation
+
+This repository contains the user-facing documentation for TigerGraph Co-Pilot.
+This repository only contains the source files for the published documentation.
+
+== Contribution
+For instructions on how to contribute to this repository, see link:https://github.com/tigergraph/doc-site/blob/main/contribution.adoc[Contribution guidelines].

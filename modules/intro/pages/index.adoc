@@ -1,0 +1,49 @@
+= TigerGraph Co-Pliot
+:experimental:
+:page-aliases: copilot-overview.adoc
+
+Introduction
+
+== Get to Know Your TigerGraph Co-Pilot
+
+[.home-card,cols="2",grid=none,frame=none, separator=¦]
+|===
+¦
+image:getstarted-homecard.png[alt=getstarted,width=74,height=74]
+*Getting Started*
+
+A [Get Started link] guide to help you get up and running.
+
+¦
+image:systemmanagment-homecard.png[alt=cluster,width=74,height=74]
+* *
+
+¦
+image:security-homecard.png[alt=security,width=74,height=74]
+* *
+
+¦
+image:billing-homecard.png[alt=billing,width=74,height=74]
+* *
+
+
+¦
+image:documentation-homecard.png[alt=support,width=74,height=74]
+*Release Notes and Support*
+
+See the most up-to-date news on TigerGraph Co-Pilot as well check out answers to common questions.
+
+[Release Notes link] |
+[TigerGraph Cloud FAQs link] |
+[Support link]
+
+¦
+image:referece-homecard.png[alt=ref,width=74,height=74]
+*Resouces*
+
+See other documents to help support your TigerGraph Co-Pilot journey.
+
+[Reference] |
+[Glossary]
+¦
+|===
