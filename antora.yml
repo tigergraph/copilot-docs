@@ -6,3 +6,5 @@ start_page: intro:index.adoc
 
 nav:
 - modules/intro/nav.adoc
+- modules/getstarted/nav.adoc
+- modules/using-copilot/nav.adoc

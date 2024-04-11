@@ -1,0 +1,10 @@
+= Get Started with TigerGrapgh Co-Pilot
+:experimental:
+
+Introduction
+
+== xref:tg-copilot:getstarted:oncloud.adoc[]
+
+== xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed]
+
+

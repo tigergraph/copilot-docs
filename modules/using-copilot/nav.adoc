@@ -1,0 +1,1 @@
+xref:tg-copilot:using-copilot:index.adoc[]
