@@ -3,7 +3,6 @@
 :page-aliases: copilot-overview.adoc
 
 TigerGraph Co-Pilot is a natural language query service that allows users to ask questions about their graph data in plain English.
-
 This service uses a Large Language Model (LLM) to convert the user's question into a function call, which is then executed on the graph database.
 
 [CAUTION]
@@ -68,7 +67,7 @@ image:referece-homecard.png[alt=ref,width=74,height=74]
 
 See other documents to help support your TigerGraph Co-Pilot journey.
 
-[Reference] |
-[Glossary]
+xref:tg-copilot:resources:index.adoc[] |
+xref:tg-copilot:resources:glossary.adoc[Glossary]
 ¦
 |===
