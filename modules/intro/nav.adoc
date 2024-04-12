@@ -1,1 +1,2 @@
-* xref:tg-copilot:intro:index.adoc[Overview]
+* xref:tg-copilot:intro:index.adoc[Introduction]
+** xref:tg-copilot:intro:overview.adoc[]
