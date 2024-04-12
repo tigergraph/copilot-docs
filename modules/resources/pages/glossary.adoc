@@ -1,0 +1,81 @@
+= Glossary
+
+[cols="2", separator=¦ ]
+|===
+¦ Item ¦ Description
+
+¦ RAG ()
+¦
+
+¦ LLM (Large Language Model)
+¦
+
+¦ LLM Provider
+¦ An LLM provider refers to a company or organization that offers Large Language Models (LLMs) as a service.
+
+¦ LLM Provider API Key
+¦ The API key verifies the identity of the requester, ensuring that the request is coming from a registered and authorized user or application.
+
+¦ Self-Managed
+¦
+
+¦ Service Account
+¦
+
+¦ VertexAI
+¦
+
+¦ Inquiry AI
+¦
+
+¦ FAISS
+¦
+
+¦ PII
+¦
+
+¦ Support AI
+¦
+
+¦ TigerGraph Co-Pilot
+¦
+
+¦ LangChain
+¦
+
+¦ Swagger
+¦
+
+¦ PyTigerGraph
+¦
+
+¦ python
+¦
+
+¦ LogWriter
+¦
+
+¦ Standard python logging package
+¦
+
+¦ Rest API
+¦
+
+¦ Milus
+¦
+
+¦ TigerGraph Cloud
+¦
+
+¦ Authentication
+¦
+
+¦ Weights and Biases
+¦
+
+¦ Test Suite
+¦
+
+¦ Docker
+¦
+|===

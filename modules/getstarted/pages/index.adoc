@@ -1,10 +1,13 @@
-= Get Started with TigerGrapgh Co-Pilot
+= Get Started with TigerGraph Co-Pilot
 :experimental:
 
-Introduction
+There are two ways to get started with TIgerGraph Co-Pilot.
 
 == xref:tg-copilot:getstarted:oncloud.adoc[]
 
+Create a database and add TigerGraph CoPilot on TigerGraph Cloud.
+
 == xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed]
 
+Download a local self-managed TigerGraph Co-Pilot service.
 

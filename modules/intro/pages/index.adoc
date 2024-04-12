@@ -2,7 +2,29 @@
 :experimental:
 :page-aliases: copilot-overview.adoc
 
-Introduction
+TigerGraph Co-Pilot is a natural language query service that allows users to ask questions about their graph data in plain English.
+
+This service uses a Large Language Model (LLM) to convert the user's question into a function call, which is then executed on the graph database.
+
+[CAUTION]
+====
+TigerGraph Co-Pilot is still in beta release and the documentation is in progress.
+====
+
+[IMPORTANT]
+====
+TigerGraph Co-Pilot beta is  for personal or R&D use and not for production use.
+====
+
+////
+3/18/2024: CoPilot is available now in Alpha (v0.0.1).
+It uses a Large Language Model (LLM) to convert your question into a function call, which is then executed on the graph in TigerGraph.
+We would love to hear your feedback to keep improving it so that it could bring more value to you.
+If you are trying it out, it would be helpful if you could fill out this sign up form so we can keep track of it (no spam, promised).
+And if you would just like to provide the feedback, please feel free to fill out this short survey after you have played with CoPilot.
+
+Thank you for your interest and support!
+////
 
 == Get to Know Your TigerGraph Co-Pilot
 
@@ -12,34 +34,37 @@ Introduction
 image:getstarted-homecard.png[alt=getstarted,width=74,height=74]
 *Getting Started*
 
-A [Get Started link] guide to help you get up and running.
+xref:tg-copilot:getstarted:index.adoc[]  guide is to help you get up and running.
 
 ¦
-image:systemmanagment-homecard.png[alt=cluster,width=74,height=74]
-* *
+image:TG_Icon_Library-154.png[alt=ai-icon,width=74,height=74]
+*Using Co-Pilot*
+
+After getting started learn how to xref:using-copilot:index.adoc[Use TigerGraph Co-Pilot].
 
 ¦
-image:security-homecard.png[alt=security,width=74,height=74]
-* *
+image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
+*Under the hood*
+
+Go deeper and learn what’s behind the platform with our
+xref:tg-copilot:intro:overview.adoc[]
 
 ¦
-image:billing-homecard.png[alt=billing,width=74,height=74]
-* *
+image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
+*Contribute*
 
+Contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
 
 ¦
 image:documentation-homecard.png[alt=support,width=74,height=74]
 *Release Notes and Support*
 
-See the most up-to-date news on TigerGraph Co-Pilot as well check out answers to common questions.
+See the most up-to-date news with our xref:release-notes:index.adoc[] on TigerGraph Co-Pilot.
 
-[Release Notes link] |
-[TigerGraph Cloud FAQs link] |
-[Support link]
 
 ¦
 image:referece-homecard.png[alt=ref,width=74,height=74]
-*Resouces*
+*Resources*
 
 See other documents to help support your TigerGraph Co-Pilot journey.
 

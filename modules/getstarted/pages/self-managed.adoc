@@ -1,1 +1,354 @@
 = Self-Managed TigerGraph Co-Pilot
+:experimental:
+:tabs:
+
+A self-managed TigerGraph Co-Pilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
+
+== Prerequisites
+
+In order to utilize TigerGraph Co-Pilot, you will need:
+
+* To install:
+** Docker
+** TigerGraph DB
+*** The TigerGraph DB needs to have a graph schema with data.
++
+====
+For installing Docker and a TigerGraph DB see our documentation on xref:3.10.1@tigergraph-server:getting-started:docker.adoc[].
+
+For a graph schema and data refer to our xref:gsql-ref:appendix:example-graphs.adoc[] and
+see our documentation on xref:gsql-ref:tutorials:gsql-101/define-a-schema.adoc[Defining a Schema] and xref:gsql-ref:tutorials:gsql-101/load-data-gsql-101.adoc[Loading Data] in the xref:gsql-ref:tutorials:gsql-101/index.adoc[] tutorial.
+====
+
+* An LLM provider  API key,
++
+====
+An LLM provider refers to a company or organization that offers Large Language Models (LLMs) as a service.
+The API key verifies the identity of the requester, ensuring that the request is coming from a registered and authorized user or application.
+====
++
+Currently, TigerGraph Co-Pilot Supports:
++
+** https://openai.com[OpenAI]
+** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
+** https://azure.microsoft.com/en-us/free/search/?ef_id=_k_CjwKCAjwt-OwBhBnEiwAgwzrUrlM-NNa3ZTxjVNk0D5gwaYgv8vIPh2qEyQgIeB2oQGqtlWGJzVB9BoCGVUQAvD_BwE_k_&OCID=AIDcmm5edswduu_SEM__k_CjwKCAjwt-OwBhBnEiwAgwzrUrlM-NNa3ZTxjVNk0D5gwaYgv8vIPh2qEyQgIeB2oQGqtlWGJzVB9BoCGVUQAvD_BwE_k_&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrlM-NNa3ZTxjVNk0D5gwaYgv8vIPh2qEyQgIeB2oQGqtlWGJzVB9BoCGVUQAvD_BwE[Azure]
+** https://aws.amazon.com/bedrock/?trk=36201f68-a9b0-45cc-849b-8ab260660e1c&sc_channel=ps&ef_id=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE:G:s&s_kwcid=AL!4422!3!692006004850!e!!g!!aws%20bedrock!21048268689!159639953975&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE[AWS Bedrock]
++
+[NOTE]
+====
+Users require only one provider.
+====
+
+
+== 1) Setup
+
+First, users need to get the TigerGraph Co-pilot image and prep the environment.
+
+.Simply, follow the steps below:
+. Pull the Co-Pilot image:
++
+[source, console]
+----
+docker pull tigergraphml/copilot
+----
++
+. CD to the directory:
++
+[source, console]
+----
+cd ~ && mkdir -p CoPilot/configs
+----
++
+. Create the new and empty files you will need:
++
+[source, console]
+----
+touch CoPilot/configs/db_config.json CoPilot/configs/llm_config.json CoPilot/configs/milvus_config.json
+----
+
+=== Clone the Repo
+
+Alternatively, user can also clone the repository.
+
+.Simply, follow the steps below:
+. Clone the repository:
++
+[source, console]
+----
+git clone https://github.com/tigergraph/CoPilot.git
+----
++
+. Setup the environment:
++
+[source, console]
+----
+cd CoPilot && mkdir configs
+----
++
+. Build the Dockerfile
++
+[source, console]
+----
+touch configs/db_config.json configs/llm_config.json configs/milvus_config.json
+docker build -t copilot:0.1 .
+----
+
+== 2) Create LLM provider configuration file
+
+Next, in that `configs/llm_config.json file` that you created in step 1, copy your LLM provider's JSON config template below, and fill out the appropriate fields.
+
+[{tabs}]
+====
+OpenAI::
++
+In addition to the `OPENAI_API_KEY`, the `llm_model` and `model_name`, can be edited to match your specific configuration details.
++
+[source, console]
+----
+{
+    "model_name": "GPT-4",
+    "embedding_service": {
+        "embedding_model_service": "openai",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY_HERE"
+        }
+    },
+    "completion_service": {
+        "llm_service": "openai",
+        "llm_model": "gpt-4-0613",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY_HERE"
+        },
+    "model_kwargs": {
+        "temperature": 0
+    },
+    "prompt_path": "./app/prompts/openai_gpt4/"
+    }
+}
+----
+
+GCP::
++
+. Follow the GCP authentication information found https://cloud.google.com/docs/authentication/application-default-credentials#GAC[here] and create a `Service Account` with `VertexAI` credentials.
++
+. Then, add the following to the docker run command:
++
+[source, console]
+----
+-v $(pwd)/configs/SERVICE_ACCOUNT_CREDS.json:/SERVICE_ACCOUNT_CREDS.json -e GOOGLE_APPLICATION_CREDENTIALS=/SERVICE_ACCOUNT_CREDS.json
+----
++
+. Finally, your JSON config should as below:
++
+[source, console]
+----
+{
+    "model_name": "GCP-text-bison",
+    "embedding_service": {
+        "embedding_model_service": "vertexai",
+        "authentication_configuration": {}
+    },
+    "completion_service": {
+        "llm_service": "vertexai",
+        "llm_model": "text-bison",
+        "model_kwargs": {
+            "temperature": 0
+        },
+    "prompt_path": "./app/prompts/gcp_vertexai_palm/"
+    }
+}
+----
+
+Azure::
++
+In addition to the `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY`, and `azure_deployment`, the `llm_model` and `model_name` can be edited to match your specific configuration details.
++
+[source, console]
+----
+{
+    "model_name": "GPT35Turbo",
+    "embedding_service": {
+        "embedding_model_service": "azure",
+        "azure_deployment":"YOUR_EMBEDDING_DEPLOYMENT_HERE",
+        "authentication_configuration": {
+            "OPENAI_API_TYPE": "azure",
+            "OPENAI_API_VERSION": "2022-12-01",
+            "AZURE_OPENAI_ENDPOINT": "YOUR_AZURE_ENDPOINT_HERE",
+            "AZURE_OPENAI_API_KEY": "YOUR_AZURE_API_KEY_HERE"
+        }
+    },
+    "completion_service": {
+        "llm_service": "azure",
+        "azure_deployment": "YOUR_COMPLETION_DEPLOYMENT_HERE",
+        "openai_api_version": "2023-07-01-preview",
+        "llm_model": "gpt-35-turbo-instruct",
+        "authentication_configuration": {
+            "OPENAI_API_TYPE": "azure",
+            "AZURE_OPENAI_ENDPOINT": "YOUR_AZURE_ENDPOINT_HERE",
+            "AZURE_OPENAI_API_KEY": "YOUR_AZURE_API_KEY_HERE"
+        },
+        "model_kwargs": {
+            "temperature": 0
+        },
+        "prompt_path": "./app/prompts/azure_open_ai_gpt35_turbo_instruct/"
+    }
+}
+----
+
+AWS Bedrock::
++
+Specify, your configuration details in the sample file below:
++
+[source, console]
+----
+    "model_name": "Claude-3-haiku",
+    "embedding_service": {
+        "embedding_model_service": "bedrock",
+        "embedding_model":"amazon.titan-embed-text-v1",
+        "authentication_configuration": {
+            "AWS_ACCESS_KEY_ID": "ACCESS_KEY",
+            "AWS_SECRET_ACCESS_KEY": "SECRET"
+        }
+    },
+    "completion_service": {
+        "llm_service": "bedrock",
+        "llm_model": "anthropic.claude-3-haiku-20240307-v1:0",
+        "authentication_configuration": {
+            "AWS_ACCESS_KEY_ID": "ACCESS_KEY",
+            "AWS_SECRET_ACCESS_KEY": "SECRET"
+        },
+        "model_kwargs": {
+            "temperature": 0,
+        },
+        "prompt_path": "./app/prompts/aws_bedrock_claude3haiku/"
+    }
+}
+----
+====
+
+== Create DB Configuration File
+
+=== `configs/db_config.json`
+
+Copy the below into `configs/db_config.json` and edit the `hostname` and `getToken` fields to match your database's configuration.
+
+Set the `timeout`, `memory threshold`, and `thread limit` parameters to control how much of the database's resources are consumed when answering a question.
+
+[NOTE]
+====
+If you are running TigerGraph outside of docker compose, change the `hostname` to match its address (`http://localhost` to `https://your-TgCloud-hostname`).
+====
+
+Once xref:tg-copilot:using-copilot:index.adoc#_authentication[authentication] is enabled in TigerGraph, set `getToken` to `true`.
+
+You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data (see xref:_optional_create_a_milvus_configuration_file[]), within this config.
+It is `true` by default
+
+[source, console]
+----
+{
+"hostname": "http://tigergraph",
+"getToken": false,
+"default_timeout": 300,
+"default_mem_threshold": 5000,
+"default_thread_limit": 8,
+"enable_consistency_checker": true
+}
+----
+
+=== (Optional) Create a Milvus Configuration File
+
+Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration (keeping in mind docker configuration).
+
+* `username` and `password` can also be configured below if required by your Milvus setup.
+* `enabled="true"` means users will be using Milvus as the embedding store.
+* `enabled="false"` means use FAISS.
+
+[source, console]
+----
+{
+"host": "milvus-standalone",
+"port": 19530,
+"username": "",
+"password": "",
+"enabled": "true"
+}
+----
+
+== (Optional) Error Logging
+
+Users can also configure error logging in TigerGraph Co-Pilot service.
+
+=== Create log configuration file
+
+Copy the below into `configs/log_config.json` and edit the appropriate values to suit your needs.
+
+The log rotation is based on the size and backups.
+These configurations are applied in the `LogWriter` to the standard python logging package.
+
+Operational and audit logs are recorded.
+
+.Outputs include:
+* `log.ERROR`
+* `log.INFO`
+* and `log.AUDIT-COPILOT`
+
+[source, console]
+----
+{
+"log_file_path": "logs",
+"log_max_size": 10485760,
+"log_backup_count": 10
+}
+----
+
+=== Configure Logging Level in Dockerfile
+
+To configure the logging level of the service, edit the `Dockerfile`.
+
+.By default, the logging level is set to "INFO".
+[source, console]
+----
+ENV LOGLEVEL="INFO"
+----
+
+This line can be changed to support different logging levels.
+
+.The levels are described below:
+[cols="2", separator=¦ ]
+|===
+¦ Level ¦ Description
+
+¦ `CRITICAL`
+¦ A serious error.
+
+¦ `ERROR`
+¦ Failing to perform functions.
+
+¦ `WARNING`
+¦ Indication of unexpected problems, e.g. failure to map a user's question to the graph schema.
+
+¦ `INFO`
+¦ Confirming that the service is performing as expected.
+
+¦ `DEBUG`
+¦ Detailed information, e.g. the functions retrieved during the `GenerateFunction` step, etc.
+
+¦ `DEBUG_PII`
+¦ Finer-grained information that could potentially include `PII`, such as a user's question, the complete function call (with parameters), and the LLM's natural language response.
+
+¦ NOTSET
+¦ All messages are processed.
+|===
+
+== 3) Run the Docker Image
+
+Now, Simply run Docker
+
+.Ex:
+[source, console]
+----
+docker run -d -v $(pwd)/configs/llm_config.json:/llm_config.json -v $(pwd)/configs/db_config.json:/db_config.json --name copilot -p 80:80 tigergraphml/copilot:latest
+----
+
+Once, that is running now you can move on to the five ways to xref:tg-copilot:using-copilot:index.adoc[Use TigerGraph Co-Pilot].
