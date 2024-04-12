@@ -1,1 +1,1 @@
-xref:tg-copilot:using-copilot:index.adoc[]
+* xref:tg-copilot:using-copilot:index.adoc[Using Co-Pilot]
