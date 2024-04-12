@@ -2,7 +2,7 @@
 :experimental:
 :tabs:
 
-After xref:partial$authentication.adoc[Authentication] there are xref:_user_guide[five ways] to interact with the TigerGraph CoPilot service:
+After authentication there are xref:_user_guide[five ways] to interact with the TigerGraph CoPilot service:
 
 * A Swagger documentation page.
 * A chat client.
@@ -15,7 +15,7 @@ include::partial$authentication.adoc[]
 
 == User Guide
 
-[{tabs}]
+[tabs]
 ====
 With Swagger Doc::
 +
@@ -28,7 +28,6 @@ With Chat::
 Navigate to `http://localhost/graphname/chat` when the Docker container is running, where graphname is the name of the graph you
 +
 image:CoPilot-UX-Demo.png[]
-
 
 With pyTigerGraph::
 +
