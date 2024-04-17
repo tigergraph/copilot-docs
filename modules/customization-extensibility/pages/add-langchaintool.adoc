@@ -1,0 +1,35 @@
+= Adding a New LangChain Tool
+
+If you want your agent to connect to other data sources or be able to perform custom logic, you can add a new LangChain tool to TigerGraph CoPilot.
+
+To add a new LangChain tool, follow these steps:
+
+1. In the app/tools directory, create a new file for your tool. The file should be named `toolname.py` where toolname is the name of your tool.
+
+2. Define your tool. The tool should a valid Python class that inherits from the LangChain BaseTool class. For more information refer to the https://python.langchain.com/docs/modules/tools/custom_tools/#subclass-basetool[LangChain's documentation].
+
+3. Add your tool to the `app/tools/__init__.py` file. This file should contain an import statement for your tool. For example:
++
+[source, python]
+----
+from `.generate_function` import `GenerateFunction`
+----
+
+4. Enable your tool to be used by the agent. To do this, import and instantiate your tool in the `app/agent.py` file.
++
+.For Example:
+[source, python]
+----
+from tools import GenerateFunction
+generate_function = GenerateFunction()
+----
++
+Then add the tool to the tools list in the Agent class.
++
+.For Example:
+[source, python]
+----
+tools = [mq2s, gen_func, new_tool]
+----
+
+5. Test your tool. Run the service and test your tool to ensure that it works as expected.

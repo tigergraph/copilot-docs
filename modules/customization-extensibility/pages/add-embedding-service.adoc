@@ -1,0 +1,29 @@
+= Adding a New Embedding Service
+
+Add a new embedding service to TigerGraph CoPilot to better fit their deployment environment.
+
+To do this, follow these steps:
+
+1. In `app/embeddings/embedding_service.py` and create a new class that inherits from the BaseEmbeddingService class. For example:
++
+[source, python]
+----
+class MyEmbeddingService(BaseEmbeddingService):
+def __init__(self, config):
+super().__init__(config)
+# Add your custom initialization code here
+----
+
+2. Implement the needed methods for your service. If you utilize a LangChain-supported embedding service, you can use the BaseEmbeddingService class as a reference. If you are using a custom endpoint, you will need to implement the embed_documents and embed_query methods accordingly.
+
+3. Import your service and dd your service to the app/main.py file where the EmbeddingService class is instantiated. For example:
++
+[source, python]
+----
+from app.embeddings.embedding_service import MyembeddingService
+
+if llm_config["embedding_service"]["embedding_model_service"].lower() == "MyEmbeddingService":
+embedding_service = MyEmbeddingService(llm_config["embedding_service"])
+----
+
+4. Test your service. Run the service and test your service to ensure that it works as expected.

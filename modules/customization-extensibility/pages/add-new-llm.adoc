@@ -1,0 +1,26 @@
+= Adding a New LLM Generation Service
+
+To add a new LLM generation service to TigerGraph CoPilot,
+
+follow these steps:
+
+1. Create a new file in the app/llm_services directory. The file should be named service_name.py where service_name is the name of your service.
+
+2. Define your service. The service should be a valid Python class that inherits from the LLM_Model class defined in the app/llm_services/base_llm.py file.
+
+3. Add your service to the app/llm_services/__init__.py file. This file should contain an import statement for your service. For example:
+from .service_name import ServiceName
+
+4. Import and instantiate your service in the app/main.py file. For example:
++
+[source, python]
+----
+from app.llm_services import ServiceName
+
+# Within the instantiation of the Agent class elif block
+elif llm_config["completion_service"]["llm_service"].lower() == "my_service":
+    logger.debug(f"/{graphname}/query request_id={req_id_cv.get()} llm_service=my_service agent created")
+    agent = TigerGraphAgent(AzureOpenAI(llm_config["completion_service"]), conn, embedding_service, embedding_store)
+----
+
+5. Test your service. Run the service and test your service to ensure that it works as expected.

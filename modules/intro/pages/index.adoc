@@ -1,18 +1,18 @@
-= TigerGraph Co-Pliot
+= TigerGraph CoPliot
 :experimental:
 :page-aliases: copilot-overview.adoc
 
-TigerGraph Co-Pilot is a natural language query service that allows users to ask questions about their graph data in plain English.
+TigerGraph CoPilot is a natural language query service that allows users to ask questions about their graph data in plain English.
 This service uses a Large Language Model (LLM) to convert the user's question into a function call, which is then executed on the graph database.
 
 [CAUTION]
 ====
-TigerGraph Co-Pilot is still in beta release and the documentation is in progress.
+TigerGraph CoPilot is still in beta release and the documentation is in progress.
 ====
 
 [IMPORTANT]
 ====
-TigerGraph Co-Pilot beta is  for personal or R&D use and not for production use.
+TigerGraph CoPilot beta is  for personal or R&D use and not for production use.
 ====
 
 ////
@@ -25,7 +25,7 @@ And if you would just like to provide the feedback, please feel free to fill out
 Thank you for your interest and support!
 ////
 
-== Get to Know Your TigerGraph Co-Pilot
+== Get to Know Your TigerGraph CoPilot
 
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
 |===
@@ -37,9 +37,9 @@ xref:tg-copilot:getstarted:index.adoc[]  guide is to help you get up and running
 
 ¦
 image:TG_Icon_Library-154.png[alt=ai-icon,width=74,height=74]
-*Using Co-Pilot*
+*Using CoPilot*
 
-After getting started learn how to xref:using-copilot:index.adoc[Use TigerGraph Co-Pilot].
+After getting started learn how to xref:using-copilot:index.adoc[Use TigerGraph CoPilot].
 
 ¦
 image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
@@ -58,14 +58,14 @@ Contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/bl
 image:documentation-homecard.png[alt=support,width=74,height=74]
 *Release Notes and Support*
 
-See the most up-to-date news with our xref:release-notes:index.adoc[] on TigerGraph Co-Pilot.
+See the most up-to-date news with our xref:release-notes:index.adoc[] on TigerGraph CoPilot.
 
 
 ¦
 image:referece-homecard.png[alt=ref,width=74,height=74]
 *Resources*
 
-See other documents to help support your TigerGraph Co-Pilot journey.
+See other documents to help support your TigerGraph CoPilot journey.
 
 xref:tg-copilot:resources:index.adoc[] |
 xref:tg-copilot:resources:glossary.adoc[Glossary]

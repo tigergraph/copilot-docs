@@ -1,0 +1,29 @@
+= Adding a New Test Suite
+
+To add a new InquiryAI test suite to TigerGraph CoPilot,
+follow these steps:
+
+
+1. Download the InquiryAI test template from https://docs.google.com/spreadsheets/d/1wyEgRhWjmgv0xkLQPOIWd00s0FQPgQy_prI5fnSrC5I/edit?usp=sharing[here] in `.tsv` format.
+
+2. Create a new directory in the tests/test_questions directory. The directory should be named suite_name where suite_name is the name of your test suite.
+
+3. Add the `.tsv` file to the new directory, populated with your example questions and expected answers.
+
+4. (Optional): Add the necessary GSQL and setup script to the `tests/test_questions/suite_name` directory to support your test suite.
+The setup scripts are not run with the test suite, but help to set up the graph for the test suite.
+The tests assume that the graph is already set up.
+
+5. Add necessary query descriptors to the tests/test_questions/suite_name directory. Within a directory named after the query, add a .json file with the query descriptor. Optionally add a `.gsql` file with the query itself.
+
+6. Add the test suite to the `tests/test_questions/parse_test_config.py` file by adding an available schema to the schema argument list.
+
+7. Test your test suite.
+Run the test suite and ensure that it works as expected.
+Run the tests with the following command (and add desired options described here):
++
+[source, python]
+----
+./run_tests.sh
+----
+

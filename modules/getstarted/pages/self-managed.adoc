@@ -1,12 +1,12 @@
-= Self-Managed TigerGraph Co-Pilot
+= Self-Managed TigerGraph CoPilot
 :experimental:
 :tabs:
 
-A self-managed TigerGraph Co-Pilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
+A self-managed TigerGraph CoPilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
 
 == Prerequisites
 
-In order to utilize TigerGraph Co-Pilot, you will need:
+In order to utilize TigerGraph CoPilot, you will need:
 
 * To install:
 ** Docker
@@ -27,7 +27,7 @@ An LLM provider refers to a company or organization that offers Large Language M
 The API key verifies the identity of the requester, ensuring that the request is coming from a registered and authorized user or application.
 ====
 +
-Currently, TigerGraph Co-Pilot Supports:
+Currently, TigerGraph CoPilot Supports:
 +
 ** https://openai.com[OpenAI]
 ** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
@@ -42,10 +42,10 @@ Users require only one provider.
 
 == 1) Setup
 
-First, users need to get the TigerGraph Co-pilot image and prep the environment.
+First, users need to get the TigerGraph CoPilot image and prep the environment.
 
 .Simply, follow the steps below:
-. Pull the Co-Pilot image:
+. Pull the CoPilot image:
 +
 [source, console]
 ----
@@ -227,7 +227,7 @@ Specify, your configuration details in the sample file below:
 ----
 ====
 
-== Create DB Configuration File
+== 3) Create DB Configuration File
 
 === `configs/db_config.json`
 
@@ -342,7 +342,7 @@ This line can be changed to support different logging levels.
 ¦ All messages are processed.
 |===
 
-== 3) Run the Docker Image
+== 4) Run the Docker Image
 
 Now, Simply run Docker
 

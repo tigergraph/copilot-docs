@@ -2,7 +2,7 @@
 :experimental:
 
 == Contact Us
-If you have any questions about these Terms, please contact us at ml@tigergraph.com.
+If you have any questions about TigerGraph CoPilot, please contact us at ml@tigergraph.com.
 
 ////
 TigerGraph provides support for TigerGraph Cloud for customers with non-free-tier clusters.

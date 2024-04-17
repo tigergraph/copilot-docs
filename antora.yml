@@ -9,4 +9,6 @@ nav:
 - modules/release-notes/nav.adoc
 - modules/getstarted/nav.adoc
 - modules/using-copilot/nav.adoc
+- modules/testing/nav.adoc
+- modules/customization-extensibility/nav.adoc
 - modules/resources/nav.adoc

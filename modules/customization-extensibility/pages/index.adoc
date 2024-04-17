@@ -1,0 +1,27 @@
+= Customization and Extensibility
+:experimental:
+
+TigerGraph CoPilot is designed to be easily extensible.
+The service can be configured to use different LLM providers, different graph schemas, and different LangChain tools.
+The service can also be extended to use different embedding services, different LLM generation services, and different LangChain tools.
+
+This guide provides information on how to add a new LangChain tool, embedding service, or LLM generation service to CoPilot.
+
+== xref:tg-copilot:customization-extensibility:add-langchaintool.adoc[]
+
+Here you can connect your agent to other data sources or be able to perform custom logic by adding a new LangChain tool to TigerGraph CoPilot.
+
+== xref:tg-copilot:customization-extensibility:add-embedding-service.adoc[Adding a New Embedding Service]
+
+Here you can add a new embedding service to TigerGraph CoPilot to better fit their deployment environment.
+
+== xref:tg-copilot:customization-extensibility:add-new-llm.adoc[Adding a New LLM Generation Service]
+
+Here you can learn how to add a new LLM generation service to TigerGraph CoPilot,
+
+== xref:tg-copilot:customization-extensibility:add-new-tests.adoc[Adding New Tests]
+
+Here you can learn to add a new InquiryAI test suite to TigerGraph CoPilot.
+
+
+

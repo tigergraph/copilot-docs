@@ -6,7 +6,7 @@
 :toc:
 :toclevels:2
 
-TigerGraph Co-Pilot (Beta) was released on [release date]
+TigerGraph CoPilot (Beta) was released on [release date]
 
 == Key Features
 * Description and link - Detailed information.

@@ -1,0 +1,105 @@
+= Testing TigerGraph CoPilot
+:experimental:
+
+
+== Test in Docker Container (Easiest)
+
+If you want to use Weights And Biases, your API key needs to be set in an environment variable on the host machine.
+
+[source, console]
+----
+export WANDB_API_KEY=KEY HERE
+----
+
+Make sure that all your LLM service provider configuration files are working properly.
+
+The configs will be mounted for the container to access.
+
+[source, console]
+----
+docker build -f Dockerfile.tests -t copilot-tests:0.1 .
+
+docker run -d -v $(pwd)/configs/:/ -e GOOGLE_APPLICATION_CREDENTIALS=/GOOGLE_SERVICE_ACCOUNT_CREDS.json -e WANDB_API_KEY=$WANDB_API_KEY -it --name copilot-tests copilot-tests:0.1
+
+docker exec copilot-tests bash -c "conda run --no-capture-output -n py39 ./run_tests.sh all all"
+----
+
+== Running Locally
+
+[source, console]
+----
+docker-compose -f ./docker-compose.yml up -d --build
+----
+
+== Test Script Options
+
+To edit what tests are executed, you can pass arguments to the `./run_tests.sh` script.
+
+.Currently, users can configure:
+* The LLM service to use (defaults to all).
+* The schemas to test against (defaults to all).
+* And whether to use Weights and Biases for logging (defaults to true).
+
+=== Configure LLM Service
+
+The first parameter to run_tests.sh is what LLMs to test against.
+
+[NOTE]
+All options below default to `all`.
+
+.The options are:
+[cols="2", separator=¦ ]
+|===
+¦ Option ¦ Description
+
+¦ `all`
+¦ Run tests against all LLMs.
+
+¦ `azure_gpt35`
+¦ Run tests against GPT-3.5 hosted on Azure.
+
+¦ `openai_gpt35`
+¦ Run tests against GPT-3.5 hosted on OpenAI.
+
+¦ `openai_gpt4`
+¦ Run tests on GPT-4 hosted on OpenAI.
+
+¦ `gcp_textbison`
+¦ Run tests on text-bison hosted on GCP.
+|===
+
+
+=== Configure Testing Graph Schemas
+
+The second parameter to `run_tests.sh` is what graphs to test against.
+
+[NOTE]
+All options below default to `all`.
+
+.The options are:
+[cols="2", separator=¦ ]
+|===
+¦ Option ¦ Description
+
+¦ `all`
+¦ Run tests against all available graphs.
+
+¦ `OGB_MAG`
+¦ The academic paper dataset provided by: https://ogb.stanford.edu/docs/nodeprop/#ogbn-mag.
+
+¦  `DigtialInfra`
+¦  Digital infrastructure digital twin dataset.
+
+¦ `Synthea`
+¦ Synthetic health dataset.
+|===
+
+=== Configure Weights and Biases
+
+If you wish to log the test results to Weights and Biases (and have the correct credentials setup above), the final parameter to `run_tests.sh` automatically defaults to `true`.
+
+If you wish to disable Weights and Biases logging, use `false`.
+
+== Add Your Own Test Suite
+
+To add a new InquiryAI test suite to TigerGraph CoPilot, see the xref:tg-copilot:customization-extensibility:add-new-tests.adoc[] documentation.
