@@ -1,1 +1,5 @@
 * xref:tg-copilot:customization-extensibility:index.adoc[]
+** xref:tg-copilot:customization-extensibility:add-langchaintool.adoc[LangChain]
+** xref:tg-copilot:customization-extensibility:add-new-llm.adoc[LLM Service]
+** xref:tg-copilot:customization-extensibility:add-embedding-service.adoc[Embedding Service]
+** xref:tg-copilot:customization-extensibility:add-new-tests.adoc[Test Suite]
