@@ -1,0 +1,17 @@
+= How to use TigerGraph CoPliot On Cloud
+:experimental:
+
+Using TigerGraph CoPilot on cloud is intuitive and straight forward with the TigerGraph Cloud UI.
+
+== TigerGraph Cloud UI
+
+Once you have CoPilot enabled for your workspace and your graph data loaded, click btn:[ Explore Graph ] in the navigation bar on the left.
+
+That will take you to the Graph Explorer where you can now “talk” to your graph on the CoPilot tab.
+
+[NOTE]
+====
+Please make sure the workspace and graph name in the top right corner match the graph you would like to work on.
+====
+
+image::Screenshot 2024-04-23 at 1.01.43 PM.png[]

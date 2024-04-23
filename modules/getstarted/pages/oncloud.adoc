@@ -1,3 +1,41 @@
 = On Cloud
+:experimental:
 
-TODO:
+CoPilot is available as an add-on service to your xref:master@cloudBeta:resource-manager:workspaces/workspace.adoc[Workspace] on TigerGraph Cloud 4.0.
+
+== Prerequisites
+
+Users must have TigerGraph cloud 4.0 access and have created an account.
+
+See xref:master@cloudBeta:overview:index.adoc[] to get started xref:master@cloudBeta:get-started:how2-signup.adoc[creating an account] and xref:master@cloudBeta:get-started:how2-login.adoc[logging in].
+
+
+== 1) Add TigerGraph CoPilot
+
+When creating a workspace, select btn:[CoPilot] in the section of btn:[ Add-ons ].
+
+image:Screenshot 2024-04-23 at 12.57.26 PM.png[]
+
+== 2) LLM Provider
+
+A window with a brief introduction to CoPilot will appear.
+Please select your LLM provider from the dropdown menu at the bottom of the window.
+
+image:Screenshot 2024-04-23 at 12.58.33 PM.png[]
+
+If you haven’t added any LLM provider previously, please click on the link of btn:[ Click here to add ], which will take you to a new window to add your LLM providers.
+
+
+Once it is done, please continue to finish creating the workspace. (See xref:master@cloudBeta:resource-manager:workspaces/how2-create-a-workspace.adoc[] for more details).
+
+
+== 3) Load Data
+
+After the workspace is created, TigerGraph CoPilot will be ready as well, but there isn’t much to do until there is data in your database.
+
+So please go ahead and load your data into the database following the instructions  at xref:master@cloudBeta:load-data:index.adoc[]
+or add a xref:master@cloudBeta:integrations:solutions.adoc[solution kit] to your database, if you have not already.
+
+== Next Steps
+
+And then come back to xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[] to learn how to use CoPilot.

@@ -5,7 +5,7 @@ There are two ways to get started with TIgerGraph CoPilot.
 
 == xref:tg-copilot:getstarted:oncloud.adoc[]
 
-Create a database and add TigerGraph CoPilot on TigerGraph Cloud.
+Create a workspace and add TigerGraph CoPilot on TigerGraph Cloud.
 
 == xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed]
 

@@ -4,6 +4,18 @@
 
 A self-managed TigerGraph CoPilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
 
+TigerGraph CoPilot is open-source on https://github.com/tigergraph/CoPilot[ GitHub], which can be deployed to your own infrastructure.
+It only includes the backend service of CoPilot but you can still access all of its functions through the xref:tg-copilot:using-copilot:how2-use-api.adoc[ APIs].
+
+The different from CoPilot on TigerGraph Cloud is the absence of the graphical user interface and the extra steps to set a self-managed service up.
+
+[TIP]
+====
+If you don’t need to extend the source code of CoPilot, the quickest way is to deploy its docker image with the docker compose file in the repo.
+====
+
+You will need the following prerequisites.
+
 == Prerequisites
 
 In order to utilize TigerGraph CoPilot, you will need:
@@ -44,6 +56,13 @@ Users require only one provider.
 
 First, users need to get the TigerGraph CoPilot image and prep the environment.
 
+.You can either:
+
+* Download the file directly from `docker-compose.yml`.
+* Clone the repo git clone https://github.com/tigergraph/CoPilot.
+
+=== Download from `docker-compose.yml`
+
 .Simply, follow the steps below:
 . Pull the CoPilot image:
 +
@@ -63,12 +82,10 @@ cd ~ && mkdir -p CoPilot/configs
 +
 [source, console]
 ----
-touch CoPilot/configs/db_config.json CoPilot/configs/llm_config.json CoPilot/configs/milvus_config.json
+touch CoPilot/configs/db_config.json CoPilot/configs/llm_config.json CoPilot/configs/milvus_config.json.
 ----
 
 === Clone the Repo
-
-Alternatively, user can also clone the repository.
 
 .Simply, follow the steps below:
 . Clone the repository:
@@ -93,10 +110,48 @@ touch configs/db_config.json configs/llm_config.json configs/milvus_config.json
 docker build -t copilot:0.1 .
 ----
 
-== 2) Create LLM provider configuration file
+== 2) Set up Configuration Files
 
-Next, in that `configs/llm_config.json file` that you created in step 1, copy your LLM provider's JSON config template below, and fill out the appropriate fields.
+Next, in the same directory as the docker compose file is in, fill in the following configuration files.
 
+* `configs/db_config.json`
+* `configs/llm_config.json`
+* (Optional) `configs/milvus_config.json`
+
+
+=== `configs/db_config.json`
+
+Copy the below into `configs/db_config.json` and edit the `hostname` and `getToken` fields to match your database's configuration.
+
+Set the `timeout`, `memory threshold`, and `thread limit` parameters to control how much of the database's resources are consumed when answering a question.
+
+[NOTE]
+====
+If you are running TigerGraph outside of docker compose, change the `hostname` to match its address (`http://localhost` to `https://your-TgCloud-hostname`).
+====
+
+Once xref:tg-copilot:using-copilot:index.adoc#_authentication[authentication] is enabled in TigerGraph, set `getToken` to `true`.
+
+You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data (see xref:_optional_create_a_milvus_configuration_file[]), within this config.
+It is `true` by default.
+
+[source, console]
+----
+{
+"hostname": "http://tigergraph",
+"getToken": false,
+"default_timeout": 300,
+"default_mem_threshold": 5000,
+"default_thread_limit": 8,
+"enable_consistency_checker": true
+}
+----
+
+=== `configs/llm_config.json`
+Next, in that `configs/llm_config.json file`, copy your LLM provider's JSON config template below, and fill out the appropriate fields.
+
+
+{empty} +
 
 [tabs]
 ====
@@ -227,35 +282,7 @@ Specify, your configuration details in the sample file below:
 ----
 ====
 
-== 3) Create DB Configuration File
 
-=== `configs/db_config.json`
-
-Copy the below into `configs/db_config.json` and edit the `hostname` and `getToken` fields to match your database's configuration.
-
-Set the `timeout`, `memory threshold`, and `thread limit` parameters to control how much of the database's resources are consumed when answering a question.
-
-[NOTE]
-====
-If you are running TigerGraph outside of docker compose, change the `hostname` to match its address (`http://localhost` to `https://your-TgCloud-hostname`).
-====
-
-Once xref:tg-copilot:using-copilot:index.adoc#_authentication[authentication] is enabled in TigerGraph, set `getToken` to `true`.
-
-You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data (see xref:_optional_create_a_milvus_configuration_file[]), within this config.
-It is `true` by default
-
-[source, console]
-----
-{
-"hostname": "http://tigergraph",
-"getToken": false,
-"default_timeout": 300,
-"default_mem_threshold": 5000,
-"default_thread_limit": 8,
-"enable_consistency_checker": true
-}
-----
 
 === (Optional) Create a Milvus Configuration File
 
@@ -342,14 +369,10 @@ This line can be changed to support different logging levels.
 ¦ All messages are processed.
 |===
 
-== 4) Run the Docker Image
+== 3) Run the Docker Image
 
-Now, Simply run Docker
+Now, simply run `docker compose up -d` and wait for all the services to start.
 
-.Ex:
-[source, console]
-----
-docker run -d -v $(pwd)/configs/llm_config.json:/llm_config.json -v $(pwd)/configs/db_config.json:/db_config.json --name copilot -p 80:80 tigergraphml/copilot:latest
-----
+== Next Steps
 
 Once, that is running now you can move on to the five ways to xref:tg-copilot:using-copilot:index.adoc[Use TigerGraph Co-Pilot].
