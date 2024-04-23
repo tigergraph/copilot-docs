@@ -1,8 +1,6 @@
 = CoPilot Overview
 
 
-
-
 image:TG-CoPilot-Architecture.png[]
 
 == Inquiry AI
@@ -66,6 +64,7 @@ SupportAI is the second component of TigerGraph CoPilot.
 It is designed to ingest a set of documents, extract a knowledge graph from the information, and enable hybrid search of the documents and graph data through natural language queries.
 This functionality will enrich RAG (Retrieval-Augmented Generation) pipelines with graph data, enabling more accurate and informative responses to user queries.
 SupportAI is under active development and will be publicly released in alpha in Q2 2024.
+
 If you are interested in evaluating at its current phase, please contact us at ml@tigergraph.com.
 
 == Query AI

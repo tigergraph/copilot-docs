@@ -10,6 +10,11 @@ include::partial$authentication.adoc[]
 
 Learn how to use TigerGraph CoPilot on the cloud.
 
+== xref:tg-copilot:using-copilot:how2-use-api.adoc[]
+
+Learn how to use TigerGraph CoPilot APIs.
+
+////
 == xref:how2-use-self-managed.adoc[]
 
 learn how to use the five ways to interact with a xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed] instance of the TigerGraph CoPilot service:
@@ -19,8 +24,5 @@ learn how to use the five ways to interact with a xref:tg-copilot:getstarted:sel
 * The pyTigerGraph client.
 * A LangChain client.
 * And the REST API.
-
-== xref:tg-copilot:using-copilot:how2-use-api.adoc[]
-
-Learn how to use TigerGraph CoPilot APIs.
+////
 

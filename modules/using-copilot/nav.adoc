@@ -1,4 +1,4 @@
 * xref:tg-copilot:using-copilot:index.adoc[Using CoPilot]
 ** xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[On Cloud]
-** xref:tg-copilot:using-copilot:how2-use-self-managed.adoc[Self-Managed]
+//** xref:tg-copilot:using-copilot:how2-use-self-managed.adoc[Self-Managed]
 ** xref:tg-copilot:using-copilot:how2-use-api.adoc[APIs]

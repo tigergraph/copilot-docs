@@ -2,7 +2,7 @@
 :experimental:
 :tabs:
 
-A self-managed TigerGraph CoPilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
+//A self-managed TigerGraph CoPilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
 
 TigerGraph CoPilot is open-source on https://github.com/tigergraph/CoPilot[ GitHub], which can be deployed to your own infrastructure.
 It only includes the backend service of CoPilot but you can still access all of its functions through the xref:tg-copilot:using-copilot:how2-use-api.adoc[ APIs].
