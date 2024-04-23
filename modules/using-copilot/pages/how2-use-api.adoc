@@ -14,9 +14,14 @@ LangChain interface will be added in the near future.
 
 
 == REST HTTP Endpoints
-For self-managed services, the full list of available HTTP endpoints can be found at the /docs path on your host’s address, e.g., http://localhost/docs. It is a Swagger API doc and you can even try out the endpoints on that page.
+For self-managed services, the full list of available HTTP endpoints can be found at the /docs path on your host’s address, e.g., http://localhost/docs.
 
+It is a Swagger API doc and you can even try out the endpoints on that page.
+
+[NOTE]
+====
 The Swagger API doc page is disabled on TigerGraph cloud.
+====
 
 Below we list several key endpoints which should satisfy most use cases.
 
@@ -25,10 +30,18 @@ Below we list several key endpoints which should satisfy most use cases.
 
 == pyTigerGraph
 
-Note: This guide assumes you are already familiar with pyTigerGraph. If not, see our documentation Getting Started with pyTigerGraph.
+[NOTE]
+====
+This guide assumes you are already familiar with pyTigerGraph.
+If not, see our documentation xref:1.6@pytigergraph:getting-started:index.adoc[] with pyTigerGraph.
+====
 
 First, make sure you have the latest version of pyTigerGraph as it is under active development for the CoPilot functions.
+
+[source, python]
+----
 pip install -U
+----
 
 Next, configure the endpoints with a `TigerGraphConnection`.
-as in the guide on the xref:tg-copilot:using-copilot:how2-use-self-managed.adoc#_using_a_self_managed_instance[Using A Self-Managed Instance: pyTigerGraph ] Tab.
+As in the guide on the xref:tg-copilot:using-copilot:how2-use-self-managed.adoc#_using_a_self_managed_instance[Using A Self-Managed Instance: pyTigerGraph ] Tab.

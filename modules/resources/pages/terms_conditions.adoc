@@ -1,6 +1,6 @@
 = Terms and Conditions for TigerGraph CoPilot
 
-{describe terms and conditions}
+
 
 ////
 == Effective Date: Apr 5, 2024
