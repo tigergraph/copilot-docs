@@ -1,22 +1,21 @@
 = How to use the TigerGraph CoPliot API
 :experimental:
 
-You can also access CoPilot via its API for both self-managed and TigerGraph Cloud-managed services. Two types of API access are provided for now: REST HTTP endpoints and pyTigerGraph interface.
+You can also access CoPilot via its API for both self-managed and TigerGraph Cloud-managed services.
+
+.Two types of API access are provided:
+* REST HTTP endpoints
+* pyTigerGraph
 
 [NOTE]
 ====
 LangChain interface will be added in the near future.
 ====
 
-* Rest HTTP endpoints
-* pyTigerGraph
-
-
-
 == REST HTTP Endpoints
 For self-managed services, the full list of available HTTP endpoints can be found at the /docs path on your host’s address, e.g., http://localhost/docs.
 
-It is a Swagger API doc and you can even try out the endpoints on that page.
+It is a Swagger API doc, and you can even try out the endpoints on that page.
 
 [NOTE]
 ====
