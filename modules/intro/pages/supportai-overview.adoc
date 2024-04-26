@@ -1,0 +1,28 @@
+= Support AI Overview
+
+SupportAI is the second component of TigerGraph CoPilot.
+
+It is designed to ingest a set of documents, extract a knowledge graph from the information, and enable hybrid search of the documents and graph data through natural language queries.
+This functionality will enrich RAG (Retrieval-Augmented Generation) pipelines with graph data, enabling more accurate and informative responses to user queries.
+
+== Support AI Architecture
+
+image::Screenshot 2024-04-26 at 10.02.58 AM.png[]
+
+With SupportAI, CoPilot creates chatbots with graph-augmented AI on a user's own documents or text data.
+
+It builds a knowledge graph from source material and applies its unique variant of knowledge graph-based RAG (Retrieval Augmented Generation) to improve the contextual relevance and accuracy of answers to natural-language questions.
+
+CoPilot will also identify concepts and build an ontology, to add semantics and reasoning to the knowledge graph, or users can provide their own concept ontology.
+
+Then, with this comprehensive knowledge graph, CoPilot performs hybrid retrievals, combining traditional vector search and graph traversals, to collect more relevant information and richer context to answer users’ knowledge questions.
+
+Organizing the data as a knowledge graph allows a chatbot to access accurate, fact-based information quickly and efficiently, thereby reducing the reliance on generating responses from patterns learned during training, which can sometimes be incorrect or out of date.
+
+
+== Next Steps
+
+Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:example-use-cases.adoc[Example Use Cases].
+
+Or return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+
