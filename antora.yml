@@ -11,4 +11,5 @@ nav:
 - modules/using-copilot/nav.adoc
 - modules/testing/nav.adoc
 - modules/customization-extensibility/nav.adoc
+- modules/under-the-hood/nav.adoc
 - modules/resources/nav.adoc

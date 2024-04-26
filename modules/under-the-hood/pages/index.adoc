@@ -42,27 +42,12 @@ image:TG_Icon_Library-154.png[alt=ai-icon,width=74,height=74]
 After getting started learn how to xref:using-copilot:index.adoc[Use TigerGraph CoPilot].
 
 ¦
-image:TG_Icon_Library-23.png[alt=ai-icon,width=74,height=74]
-*Testing CoPilot*
-
-Learn how you can xref:tg-copilot:testing:index.adoc[Test TigerGraph CoPilot]
-
-¦
-image:TG_Icon_Library-161.png[alt=ai-icon,width=74,height=74]
-*Customize and Extend*
-
-Learn the xref:tg-copilot:customization-extensibility:index.adoc[] opitons to your TigerGraph CoPilot Service.
-
-¦
 image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
 *Under the hood*
 
-Go deeper and learn what’s behind the platform.
+Go deeper and learn what’s behind the platform with our
+xref:tg-copilot:intro:overview.adoc[]
 
-xref:tg-copilot:intro:overview.adoc[] |
-xref:archtecture-overview.adoc[Architecture] |
-xref:inquiryai-overview.adoc[InquiryAI] |
-xref:supportai-overview.adoc[SupportAI]
 ¦
 image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
 *Contribute*

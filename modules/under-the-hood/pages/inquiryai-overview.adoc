@@ -1,4 +1,4 @@
-= InquiryAI Overview
+= Inquiry AI Overview
 
 InquiryAI is the first component of TigerGraph CoPilot.
 

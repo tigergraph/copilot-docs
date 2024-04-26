@@ -1,4 +1,4 @@
-= SupportAI Overview
+= Support AI Overview
 
 SupportAI is the second component of TigerGraph CoPilot.
 
