@@ -7,10 +7,16 @@
 TigerGraph CoPilot (beta) was released on Monday, Apr. 29th 2024.
 
 == Key Features
-* xref:tg-copilot:getstarted:index.adoc[] guide is to help you get up and running or first checkout our
-xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot Overview] page.
+* xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot] -
+** *Natural Language Inquiry*: The product’s natural-language and auto-execution capabilities empower non-technical users to focus on mining insights from their data through an AI assistant that they can “talk” to.
 
-* xref:using-copilot:index.adoc[Using TigerGraph CoPilot] - TigerGraph CoPilot is now in beta release.
+** *Graph-Augmented Generative AI*: TigerGraph CoPilot creates chat bots with augmented AI on a user’s own documents.
+
+** *Reliable and Responsible AI*: TigerGraph CoPilot mitigates AI hallucination by allowing LLMs to access the graph database via curated queries.
+
+** *High Scalability and Performance*: TigerGraph CoPilot runs graph analytics and obtains insights from a graph much faster than other LLM-graph solutions.
+
+* xref:using-copilot:index.adoc[Using TigerGraph CoPilot] - TigerGraph CoPilot is now available in beta release.
 
 * xref:tg-copilot:testing:index.adoc[Test TigerGraph CoPilot] - Once setup with TigerGraph CoPilot users can test the service.
 
