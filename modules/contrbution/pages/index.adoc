@@ -1,0 +1,54 @@
+= Contribute
+:experimental:
+
+Thank you for your interest in contributing to TigerGraph CoPilot!
+We welcome contributions from the community to help improve our project.
+
+This guide will provide you with the necessary information to get started.
+
+== Contribution Guidelines
+
+=== Guidelines Standards
+.Please ensure the following for your contributions:
+* Code follows the project's code style guidelines.
+* Code is well-tested and does not introduce any new bugs.
+* Commit messages are clear and descriptive.
+* Pull request includes a detailed description of the changes made.
+
+=== Steps
+
+.To contribute to TigerGraph CoPilot, follow these general steps:
+. Fork the repository on GitHub.
+. Clone your forked repository to your local machine.
+. Create a new branch for your changes.
+. Make your changes and commit them with descriptive commit messages.
+. Push your changes to your forked repository.
+. Submit a pull request to the main repository.
+
+=== Making Contribution
+
+Contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
+
+
+== Testing
+We value the quality of our code and encourage contributors to write tests for their changes.
+Please make sure to include tests for any new functionality or bug fixes.
+
+== Documentation
+Good documentation is essential for maintaining and growing our project.
+If you make changes that require updates to the documentation, please include those changes in your pull request.
+
+== Issue Tracking
+Contribution to the project is not limited to code changes.
+If you encounter any issues or have ideas for improvements, please open an issue on our GitHub repository.
+
+We appreciate your feedback and will address the issues as soon as possible.
+
+
+== Next Steps
+
+Next, go to xref:tg-copilot:resources:index.adoc[] see additional resources TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
+

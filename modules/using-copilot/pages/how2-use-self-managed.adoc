@@ -166,3 +166,9 @@ If you wish to deploy TigerGraph CoPilot and disable the Swagger documentation p
 ----
 docker run -d -v $(pwd)/configs/llm_config.json:/llm_config.json -v $(pwd)/configs/db_config.json:/db_config.json -e PRODUCTION=true --name copilot -p 80:80 tigergraphml/copilot:latest
 ----
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

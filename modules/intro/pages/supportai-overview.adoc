@@ -24,5 +24,5 @@ Organizing the data as a knowledge graph allows a chatbot to access accurate, fa
 
 Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:example-use-cases.adoc[Example Use Cases].
 
-Or return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[TigerGraph CoPliot Overview] page for a different topic.
 

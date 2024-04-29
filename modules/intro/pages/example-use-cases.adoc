@@ -49,5 +49,7 @@ This solution directly improves the productivity and reduces the cost in typical
 
 == Next Steps
 
-Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Next, go to xref:tg-copilot:contrbution:index.adoc[] see how you can contribute to TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
 

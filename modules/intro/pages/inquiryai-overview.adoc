@@ -65,7 +65,7 @@ See xref:tg-copilot:getstarted:self-managed.adoc[] for more details.
 
 Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:supportai-overview.adoc[].
 
-Or return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
 
 
 

@@ -24,10 +24,12 @@ It is a Swagger API doc, and you can even try out the endpoints on that page.
 The Swagger API doc page is disabled on TigerGraph Cloud.
 ====
 
+////
 Below we list several key endpoints which should satisfy most use cases.
 
 * Endpoint 1
 * …
+////
 
 == pyTigerGraph
 
@@ -114,3 +116,9 @@ print(conn.ai.query("What are the 5 most influential papers by citations?"))
 
 # prints: {'natural_language_response': 'The top 5 most cited papers are:\n\n1. [Title of paper with Vertex_ID 428523]\n2. [Title of paper with Vertex_ID 384889]\n3. [Title of paper with Vertex_ID 377502]\n4. [Title of paper with Vertex_ID 61855]\n5. [Title of paper with Vertex_ID 416200]', 'answered_question': True, 'query_sources': {'function_call': "runInstalledQuery('tg_pagerank', params={'v_type': 'Paper', 'e_type': 'CITES', 'top_k': 5})", 'result': [{'@@top_scores_heap': [{'Vertex_ID': '428523', 'score': 392.8731}, {'Vertex_ID': '384889', 'score': 251.8021}, {'Vertex_ID': '377502', 'score': 149.1018}, {'Vertex_ID': '61855', 'score': 129.7406}, {'Vertex_ID': '416200', 'score': 129.2286}]}]}}
 ----
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

@@ -65,4 +65,7 @@ or add a xref:master@cloudBeta:integrations:solutions.adoc[solution kit] to your
 
 == Next Steps
 
-And then come back to xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[] to learn how to use TigerGraph CoPilot.
+Next, go to xref:tg-copilot:using-copilot:index.adoc[] to learn how to use TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+

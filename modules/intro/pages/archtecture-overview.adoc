@@ -4,8 +4,8 @@ image:TG-CoPilot-Architecture.png[]
 
 TigerGraph CoPilot is an AI assistant that is meticulously designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks. It is one AI assistant with three core component services:
 
-* InquiryAI as a natural language assistant for graph-powered solutions
-* SupportAI as a knowledge Q&A assistant for documents and graphs
+* xref:tg-copilot:under-the-hood:inquiryai-overview.adoc[InquiryAI] is a natural language assistant for graph-powered solutions
+* xref:tg-copilot:under-the-hood:supportai-overview.adoc[SupportAI] as a knowledge Q&A assistant for documents and graphs
 * *(Not available in Beta)* QueryAI as a GSQL code generator including query and schema generation, data mapping, and more.
 
 You can interact with CoPilot through both a chat interface and APIs.

@@ -15,16 +15,6 @@ TigerGraph CoPilot is still in beta release and the documentation is in progress
 TigerGraph CoPilot beta is  for personal or R&D use and not for production use.
 ====
 
-////
-3/18/2024: CoPilot is available now in Alpha (v0.0.1).
-It uses a Large Language Model (LLM) to convert your question into a function call, which is then executed on the graph in TigerGraph.
-We would love to hear your feedback to keep improving it so that it could bring more value to you.
-If you are trying it out, it would be helpful if you could fill out this sign up form so we can keep track of it (no spam, promised).
-And if you would just like to provide the feedback, please feel free to fill out this short survey after you have played with CoPilot.
-
-Thank you for your interest and support!
-////
-
 == Get to Know Your TigerGraph CoPilot
 
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
@@ -33,7 +23,8 @@ Thank you for your interest and support!
 image:getstarted-homecard.png[alt=getstarted,width=74,height=74]
 *Getting Started*
 
-xref:tg-copilot:getstarted:index.adoc[]  guide is to help you get up and running.
+xref:tg-copilot:getstarted:index.adoc[] guide is to help you get up and running or first checkout our
+xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot Overview] page.
 
 ¦
 image:TG_Icon_Library-154.png[alt=ai-icon,width=74,height=74]
@@ -67,7 +58,7 @@ xref:supportai-overview.adoc[SupportAI]
 image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
 *Contribute*
 
-Contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
+Learn how to xref:tg-copilot:contrbution:index.adoc[] to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
 
 ¦
 image:documentation-homecard.png[alt=support,width=74,height=74]

@@ -376,3 +376,5 @@ Now, simply run `docker compose up -d` and wait for all the services to start.
 == Next Steps
 
 Once, that is running now you can move on to the five ways to xref:tg-copilot:using-copilot:index.adoc[Use TigerGraph Co-Pilot].
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

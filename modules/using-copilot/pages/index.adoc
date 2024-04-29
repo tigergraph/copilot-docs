@@ -14,6 +14,14 @@ Learn how to use TigerGraph CoPilot on the cloud.
 
 Learn how to use TigerGraph CoPilot APIs.
 
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
+
+
 ////
 == xref:how2-use-self-managed.adoc[]
 

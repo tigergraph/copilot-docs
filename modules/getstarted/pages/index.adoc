@@ -11,3 +11,8 @@ Create a workspace and add TigerGraph CoPilot on TigerGraph Cloud.
 
 Download a local self-managed TigerGraph CoPilot service.
 
+== Next Steps
+
+Next, go to xref:tg-copilot:using-copilot:index.adoc[] to learn how to use TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

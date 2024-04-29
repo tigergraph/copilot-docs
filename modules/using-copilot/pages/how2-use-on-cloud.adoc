@@ -5,15 +5,34 @@ Using TigerGraph CoPilot on cloud is intuitive and straight forward with the Tig
 
 == TigerGraph Cloud UI
 
-Once you have CoPilot enabled for your workspace and your graph data loaded, click btn:[ Explore Graph ] in the navigation bar on the left.
-
-
-
+.Once you have CoPilot enabled for your workspace and your graph data loaded:
+. Click btn:[ Explore Graph ] in the navigation bar on the left.
++
 image::Screenshot 2024-04-23 at 1.01.43 PM.png[]
-
-That will take you to the btn:[ Graph Explorer ] where you can now “talk” to your graph on the CoPilot tab.
-
++
+. That will take you to the btn:[Graph Explorer] and you can now “talk” to your graph on the CoPilot tab.
++
 [NOTE]
 ====
-Please make sure the workspace and graph name in the top right corner match the graph you would like to work on.
+Please make sure the workspace and graph name on the top right corner are the ones you would like to work on.
 ====
++
+image::Screenshot 2024-04-26 at 12.26.55 PM.png[]
+
+. For each response, you can get more information behind the answers.
+If you click on the information icon below the response, you will see explanations on how CoPilot arrives at the answers.
++
+image:Screenshot 2024-04-26 at 12.27.57 PM.png[]
+
+. If the response contains vertices or edges from the graph, you can click on the little graph icon and it will take you to the visualization of those data as a graph.
++
+image::Screenshot 2024-04-26 at 12.28.21 PM.png[]
+
+. Continue to experiment by asking TigerGraph CoPilot more about your graph.
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+

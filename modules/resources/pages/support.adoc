@@ -4,6 +4,11 @@
 == Contact Us
 If you have any questions about TigerGraph CoPilot, please contact us at ml@tigergraph.com.
 
+
+== Next Steps
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
 ////
 TigerGraph provides support for TigerGraph Cloud for customers with non-free-tier clusters.
 

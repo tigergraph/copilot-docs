@@ -2,6 +2,56 @@
 :experimental:
 
 
+A family of tests are included under the `tests` directory.
+If you would like to add more tests please refer to the xref:tg-copilot:customization-extensibility:index.adoc[] guides.
+
+A shell script `run_tests.sh` is also included in the folder which is the driver for running the tests.
+
+[TIP]
+====
+The easiest way to use this script is to execute it in the Docker Container for testing.
+====
+
+== Test in Docker Container
+
+. First, make sure that all your LLM service provider configuration files are working properly.
+The configs will be mounted for the container to access.
++
+[NOTE]
+====
+Make sure that all the dependencies such as database and Milvus are ready.
+If not, you can run the included docker compose file to create those services.
+====
+
+. Run:
++
+[source, console]
+----
+docker compose docker-compose.yml up -d --build
+----
+
+=== Weight and Biases Test Logging
+
+.If you want to use Weights And Biases for logging the test results:
+. First, your `WandB API key` needs to be set in an environment variable on the host machine.
++
+[source, console]
+----
+export WANDB_API_KEY=KEY
+----
+
+. Then, you can build the docker container from the `Dockerfile.tests` file and run the test script in the container.
++
+[source, console]
+----
+docker build -f Dockerfile.tests -t copilot-tests:0.1 .
+
+docker run -d -v $(pwd)/configs/:/ -e GOOGLE_APPLICATION_CREDENTIALS=/GOOGLE_SERVICE_ACCOUNT_CREDS.json -e WANDB_API_KEY=$WANDB_API_KEY -it --name copilot-tests copilot-tests:0.1
+
+docker exec copilot-tests bash -c "conda run --no-capture-output -n py39 ./run_tests.sh all all"
+----
+
+////
 == Test in Docker Container (Easiest)
 
 If you want to use Weights And Biases, your API key needs to be set in an environment variable on the host machine.
@@ -30,6 +80,9 @@ docker exec copilot-tests bash -c "conda run --no-capture-output -n py39 ./run_t
 ----
 docker-compose -f ./docker-compose.yml up -d --build
 ----
+////
+
+
 
 == Test Script Options
 
@@ -103,3 +156,9 @@ If you wish to disable Weights and Biases logging, use `false`.
 == Add Your Own Test Suite
 
 To add a new InquiryAI test suite to TigerGraph CoPilot, see the xref:tg-copilot:customization-extensibility:add-new-tests.adoc[] documentation.
+
+== Next Steps
+
+Next, go to xref:tg-copilot:customization-extensibility:index.adoc[] to learn how to customize and extend TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

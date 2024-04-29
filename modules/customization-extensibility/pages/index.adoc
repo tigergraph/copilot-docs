@@ -23,5 +23,10 @@ Here you can learn how to add a new LLM generation service to TigerGraph CoPilot
 
 Here you can learn to add a new InquiryAI test suite to TigerGraph CoPilot.
 
+== Next Steps
+
+Next, go to xref:tg-copilot:intro:overview.adoc[Archtecture Overview] to learn more about what is under the hood of TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
 
 

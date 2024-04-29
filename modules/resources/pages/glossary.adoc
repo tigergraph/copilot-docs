@@ -4,11 +4,13 @@
 |===
 ¦ Item ¦ Description
 
-¦ RAG ()
-¦ Definition
+¦ RAG (Retrieval Augmented Generation)
+¦ RAG is a hybrid approach that combines a retrieval system with a generative model.
+It retrieves relevant context from a knowledge base which is then used by a transformer-based model to generate responses.
 
 ¦ LLM (Large Language Model)
-¦
+¦ Large Language Models are types of artificial intelligence models trained on vast amounts of text data.
+They are capable of understanding and generating human-like text, and are used for tasks such as translation, summarization, and conversation.
 
 ¦ LLM Provider
 ¦ An LLM provider refers to a company or organization that offers Large Language Models (LLMs) as a service.
@@ -17,65 +19,49 @@
 ¦ The API key verifies the identity of the requester, ensuring that the request is coming from a registered and authorized user or application.
 
 ¦ Self-Managed
-¦
+¦ Refers to a software or platform that is hosted and managed by the user's own team, rather than being provided as a service by a third party.
+It involves handling the setup, maintenance, and management of the software.
+
 
 ¦ Service Account
-¦
+¦ A service account is a non-human user account used by applications and services to interact with software APIs or other tools.
+It provides a way to grant access to resources programmatically, without using individual user credentials.
 
-¦ VertexAI
-¦
+¦ FAISS (Facebook AI Similarity Search)
+¦ Developed by Facebook, FAISS is a library for efficient similarity search and clustering of dense vectors.
+It is particularly useful for tasks involving large-scale vector search in high-dimensional spaces.
 
-¦ Inquiry AI
-¦
-
-¦ FAISS
-¦
-
-¦ PII
-¦
-
-¦ Support AI
-¦
-
-¦ TigerGraph Co-Pilot
-¦
+¦ PII (Personally Identifiable Information)
+¦ PII refers to any data that could potentially identify a specific individual.
+Examples include names, addresses, email addresses, and social security numbers.
 
 ¦ LangChain
-¦
+¦ LangChain is a library that allows developers to integrate language models into applications.
+It provides tools for building applications that combine language understanding and generation capabilities.
 
 ¦ Swagger
-¦
+¦ Swagger (now known as OpenAPI) is a set of tools for building, documenting, and consuming REST APIs.
+It helps standardize the process of API integration and documentation.
 
-¦ PyTigerGraph
-¦
+¦ Python
+¦ Python programming language, known for its simplicity and versatility, used widely in data science, web development, automation, and many other areas of software development.
 
-¦ python
-¦
-
-¦ LogWriter
-¦
-
-¦ Standard python logging package
-¦
-
-¦ Rest API
-¦
-
-¦ Milus
-¦
-
-¦ TigerGraph Cloud
-¦
-
-¦ Authentication
-¦
 
 ¦ Weights and Biases
-¦
+¦ Weights and Biases is a machine learning platform that helps track experiments, visualize data, and automate model optimization.
+It is widely used for tracking and visualizing the training of models.
 
 ¦ Test Suite
-¦
+¦ A test suite in software development is a collection of test cases intended to verify that a software system meets its design specifications and behaves as expected.
 
 ¦ Docker
-¦
+¦ Docker is a platform that uses containerization technology to make it easier to create, deploy, and run applications by using containers.
+Containers allow a developer to package up an application with all the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+
 |===
+
+== Next Steps
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
+
