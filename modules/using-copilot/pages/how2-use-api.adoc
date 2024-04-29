@@ -1,7 +1,7 @@
 = How to use the TigerGraph CoPliot API
 :experimental:
 
-You can also access TigerGraph CoPilot via its API for both self-managed and TigerGraph Cloud managed services.
+After authentication you can access TigerGraph CoPilot via its API for both self-managed and TigerGraph Cloud managed services.
 
 .Two types of API access are provided:
 * REST HTTP endpoints
@@ -11,6 +11,8 @@ You can also access TigerGraph CoPilot via its API for both self-managed and Tig
 ====
 LangChain interface will be added in the near future.
 ====
+
+include::partial$authentication.adoc[]
 
 == REST HTTP Endpoints
 For self-managed services, the full list of available HTTP endpoints can be found at the `/docs` path on your host’s address, e.g., http://localhost/docs.
@@ -43,7 +45,7 @@ If not, see our documentation xref:1.6@pytigergraph:getting-started:index.adoc[]
 +
 [source, python]
 ----
-pip install -U
+pip install -U pyTigerGraph
 ----
 +
 //pip install -U git+https://github.com/tigergraph/pyTigerGraph.git
@@ -62,10 +64,10 @@ from pyTigerGraph import TigerGraphConnection
 conn = TigerGraphConnection(host="DATABASE_HOST_HERE", graphname="GRAPH_NAME_HERE", username="USERNAME_HERE", password="PASSWORD_HERE")
 ----
 +
-.Configure InquiryAI host:
+.Configure CoPilot host:
 [source, python]
 ----
-conn.ai.configureInquiryAIHost("INQUIRYAI_HOST_HERE")
+conn.ai.configureCoPilotHost("COPILOT_HOST_HERE")
 ----
 +
 .Retrieve Top-K Docs from Library:
@@ -116,6 +118,8 @@ print(conn.ai.query("What are the 5 most influential papers by citations?"))
 
 # prints: {'natural_language_response': 'The top 5 most cited papers are:\n\n1. [Title of paper with Vertex_ID 428523]\n2. [Title of paper with Vertex_ID 384889]\n3. [Title of paper with Vertex_ID 377502]\n4. [Title of paper with Vertex_ID 61855]\n5. [Title of paper with Vertex_ID 416200]', 'answered_question': True, 'query_sources': {'function_call': "runInstalledQuery('tg_pagerank', params={'v_type': 'Paper', 'e_type': 'CITES', 'top_k': 5})", 'result': [{'@@top_scores_heap': [{'Vertex_ID': '428523', 'score': 392.8731}, {'Vertex_ID': '384889', 'score': 251.8021}, {'Vertex_ID': '377502', 'score': 149.1018}, {'Vertex_ID': '61855', 'score': 129.7406}, {'Vertex_ID': '416200', 'score': 129.2286}]}]}}
 ----
+
+For more examples with `pyTigerGraph`, please refer to the notebook tutorials https://github.com/tigergraph/CoPilot/tree/main/docs/notebooks[here].
 
 == Next Steps
 

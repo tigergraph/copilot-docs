@@ -41,25 +41,25 @@ In the third phase, CoPilot executes the identified query and returns the result
 . The system has the potential of predicting the execution resources needed to answer the question.
 ====
 
-== `MapQuestionToSchema` and `GenerateFunction`
+// == `MapQuestionToSchema` and `GenerateFunction`
 
-In order to perform these three phases, InquiryAI uses an AI agent that has two tools available to it:
+// In order to perform these three phases, InquiryAI uses an AI agent that has two tools available to it:
 
-* `MapQuestionToSchema`
-* and `GenerateFunction`.
+// * `MapQuestionToSchema`
+// * and `GenerateFunction`.
 
-The `MapQuestionToSchema` tool maps the user's question to the graph schema.
+// The `MapQuestionToSchema` tool maps the user's question to the graph schema.
 
-The `GenerateFunction` tool generates the function call based on the user's question and the graph schema.
-The function is then executed on the graph database, then the result is processed by the LLM service and returned to the user.
-`GenerateFunction` utilizes a vector RAG (Retrieval-Augmented Generation) process to suggest the most relevant functions to the user's question.
+// The `GenerateFunction` tool generates the function call based on the user's question and the graph schema.
+// The function is then executed on the graph database, then the result is processed by the LLM service and returned to the user.
+// `GenerateFunction` utilizes a vector RAG (Retrieval-Augmented Generation) process to suggest the most relevant functions to the user's question.
 
-[NOTE]
-====
-Currently, the vector store used by `GenerateFunction` is ephemeral, meaning that the available queries will only be stored while using running the CoPilot container.
+// [NOTE]
+// ====
+// Currently, the vector store used by `GenerateFunction` is ephemeral, meaning that the available queries will only be stored while using running the CoPilot container.
 
-See xref:tg-copilot:getstarted:self-managed.adoc[] for more details.
-====
+// See xref:tg-copilot:getstarted:self-managed.adoc[] for more details.
+// ====
 
 == Next Steps
 

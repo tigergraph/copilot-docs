@@ -25,7 +25,7 @@ image::Screenshot 2024-04-26 at 12.15.49 PM.png[width=300]
 +
 [NOTE]
 ====
-Currently, OpenAI, GCP, Azure OpenAI, and AWS Bedrock are supported.
+Currently, only OpenAI is supported while GCP, Azure OpenAI, and AWS Bedrock support are coming soon.
 ====
 
 . TigerGraph Cloud 4.0 will test the connection to your LLM provider once you click btn:[Test & Add].

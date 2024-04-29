@@ -27,10 +27,6 @@ It involves handling the setup, maintenance, and management of the software.
 ¦ A service account is a non-human user account used by applications and services to interact with software APIs or other tools.
 It provides a way to grant access to resources programmatically, without using individual user credentials.
 
-¦ FAISS (Facebook AI Similarity Search)
-¦ Developed by Facebook, FAISS is a library for efficient similarity search and clustering of dense vectors.
-It is particularly useful for tasks involving large-scale vector search in high-dimensional spaces.
-
 ¦ PII (Personally Identifiable Information)
 ¦ PII refers to any data that could potentially identify a specific individual.
 Examples include names, addresses, email addresses, and social security numbers.
