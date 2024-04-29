@@ -58,7 +58,7 @@ What further differentiates TigerGraph CoPilot from similar products is that it 
 .From a graph with digital infrastructure data:
 [source, console]
 ----
-    “What services would be affected by an upgrade to server 321”
+“What services would be affected by an upgrade to server 321”
 ----
 ====
 
