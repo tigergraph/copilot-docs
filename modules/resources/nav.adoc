@@ -1,4 +1,4 @@
 * xref:index.adoc[Resources]
 ** xref:resources:glossary.adoc[]
 ** xref:resources:support.adoc[]
-** xref:resources:terms_conditions.adoc[(Beta) Terms and Conditions]
+//** xref:resources:terms_conditions.adoc[(Beta) Terms and Conditions]
