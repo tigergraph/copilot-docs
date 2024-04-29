@@ -17,6 +17,66 @@ TigerGraph CoPilot also enables transparency by open-sourcing its major componen
 * *High Scalability and Performance*: By leveraging the TigerGraph database — the most scalable and performant platform for connected data — TigerGraph CoPilot runs graph analytics and obtains insights from a graph much faster than other LLM-graph solutions.
 As a graph-RAG solution, it is able to utilize knowledge bases at a much larger scale than other knowledge graph-powered Q&A solutions.
 
+== Example Use Cases
+
+TigerGraph CoPilot has a wide variety of use cases and even more out there to be discovered.
+Here are some example use cases for TigerGraph CoPilot.
+
+=== Natural Language to Data Insights
+
+Whether you are business analysts, specialists, or investigators, CoPilot enables you to get information and insights quickly from your data.
+
+====
+.For example:
+* It can generate reports for fraud investigators by answering questions like:
++
+[source, console]
+----
+“Show me the list of recent fraud cases that were false positives'';
+----
++
+* It facilitates more accurate investigation like:
++
+[source, console]
+----
+“Who had transactions with account 123 in the past month with amounts larger than $1000”.
+----
+====
+
+What further differentiates TigerGraph CoPilot from similar products is that it can even answer the “what if?” questions by traversing your graph along dependencies.
+
+====
+.For example:
+* You can easily find out:
++
+.From a graph with supply chain data:
+[source, console]
+----
+“What suppliers can cover the shortage of part 123”
+----
++
+.From a graph with digital infrastructure data:
+[source, console]
+----
+    “What services would be affected by an upgrade to server 321”
+----
+====
+
+=== Accurate, Context-Rich Q&A Solution
+
+TigerGraph CoPilot provides a complete solution to build Q&A chatbot on your own data and documents.
+
+Its knowledge graph-based RAG approach enables contextually accurate information retrieval that facilitate better answers and more informed decisions.
+
+This solution directly improves the productivity and reduces the cost in typical Q&A applications such as call centers, customer services, knowledge search, and so on; but by merging the document knowledge graph with existing business graph (e.g., product graph) into one intelligence graph, CoPilot can tackle problems that cannot be addressed by other RAG solutions.
+
+====
+.For example:
+* By combining your customer's purchase history with product graphs, we can get more accurate personalized recommendations when customers type in their search queries or ask for recommendations.
+* By combining your patient’s medical history with healthcare graphs, doctors or health specialists can get more useful information about the patients to provide better healthcare or precision healthcare.
+====
+
+
 == Next Steps
 
 Next, learn how to xref:tg-copilot:getstarted:index.adoc[] or go deeper learn

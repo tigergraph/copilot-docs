@@ -50,10 +50,10 @@ image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
 
 Go deeper and learn what’s behind the platform.
 
-xref:tg-copilot:intro:overview.adoc[] |
-xref:archtecture-overview.adoc[Architecture] |
-xref:inquiryai-overview.adoc[InquiryAI] |
-xref:supportai-overview.adoc[SupportAI]
+xref:tg-copilot:intro:overview.adoc[Overview] |
+xref:tg-copilot:intro:archtecture-overview.adoc[Architecture] |
+xref:tg-copilot:intro:inquiryai-overview.adoc[InquiryAI] |
+xref:tg-copilot:intro:supportai-overview.adoc[SupportAI]
 ¦
 image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
 *Contribute*

@@ -19,10 +19,9 @@ Then, with this comprehensive knowledge graph, CoPilot performs hybrid retrieval
 
 Organizing the data as a knowledge graph allows a chatbot to access accurate, fact-based information quickly and efficiently, thereby reducing the reliance on generating responses from patterns learned during training, which can sometimes be incorrect or out of date.
 
-
 == Next Steps
 
-Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:example-use-cases.adoc[Example Use Cases].
+Next, go to xref:tg-copilot:contrbution:index.adoc[] see how you can contribute to TigerGraph CoPilot.
 
-Return to xref:tg-copilot:intro:index.adoc[TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
 

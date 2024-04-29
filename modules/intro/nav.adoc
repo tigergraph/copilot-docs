@@ -1,9 +1,2 @@
 * xref:tg-copilot:intro:index.adoc[Introduction]
 ** xref:tg-copilot:intro:overview.adoc[]
-
-////
-** xref:tg-copilot:intro:archtecture-overview.adoc[Architecture]
-** xref:tg-copilot:intro:inquiryai-overview.adoc[Inquiry AI]
-** xref:tg-copilot:intro:supportai-overview.adoc[Support AI]
-** xref:tg-copilot:intro:example-use-cases.adoc[Example Use Cases]
-////
