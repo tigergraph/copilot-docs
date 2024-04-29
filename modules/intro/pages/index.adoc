@@ -2,8 +2,7 @@
 :experimental:
 :page-aliases: copilot-overview.adoc
 
-TigerGraph CoPilot is a natural language query service that allows users to ask questions about their graph data in plain English.
-This service uses a Large Language Model (LLM) to convert the user's question into a function call, which is then executed on the graph database.
+TigerGraph CoPilot is an AI assistant that is meticulously designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks. TigerGraph CoPilot empowers business analysts, data scientists, and developers to use natural language with the ability to run queries against up-to-date data at scale.
 
 [CAUTION]
 ====

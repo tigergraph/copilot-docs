@@ -11,7 +11,7 @@ image::Screenshot 2024-04-26 at 10.02.58 AM.png[]
 
 With SupportAI, CoPilot creates chatbots with graph-augmented AI on a user's own documents or text data.
 
-It builds a knowledge graph from source material and applies its unique variant of knowledge graph-based RAG (Retrieval Augmented Generation) to improve the contextual relevance and accuracy of answers to natural-language questions.
+It builds a knowledge graph from source material and applies its unique variant of graphRAG (graph-based Retrieval Augmented Generation) to improve the contextual relevance and accuracy of answers to natural-language questions.
 
 CoPilot will also identify concepts and build an ontology, to add semantics and reasoning to the knowledge graph, or users can provide their own concept ontology.
 

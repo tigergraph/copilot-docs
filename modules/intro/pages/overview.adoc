@@ -8,7 +8,7 @@ This combination delivers superior AI performance — more accuracy and greater 
 Rather than having to learn a new technology or language when a question is posed in natural language, TigerGraph CoPilot determines the best available query needed to answer that question, runs the query, and returns the results in natural language, graph visualizations and other ways a user can more clearly understand.
 
 * *Graph-Augmented Generative AI*: TigerGraph CoPilot creates chatbots with augmented AI on a user’s own documents.
-The tool builds a knowledge graph from source material and applies knowledge graph RAG (Retrieval Augmented Generation) to improve the contextual relevance and accuracy of answers to their natural-language questions.
+The tool builds a knowledge graph from source material and applies graphRAG (graph-based Retrieval Augmented Generation) to improve the contextual relevance and accuracy of answers to their natural-language questions.
 
 * *Reliable and Responsible AI*: TigerGraph CoPilot mitigates AI hallucination by allowing LLMs to access the graph database via curated queries.
 It also adheres to the same role-based access control and security measures (already part of the TigerGraph database) to assure responsible AI.
@@ -32,7 +32,7 @@ Whether you are business analysts, specialists, or investigators, CoPilot enable
 +
 [source, console]
 ----
-“Show me the list of recent fraud cases that were false positives'';
+“Show me the list of recent fraud cases that were false positives";
 ----
 +
 * It facilitates more accurate investigation like:

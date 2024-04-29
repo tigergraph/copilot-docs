@@ -2,9 +2,7 @@
 :experimental:
 :tabs:
 
-After authentication there several ways to use TigerGraph CoPilot.
-
-include::partial$authentication.adoc[]
+There are mainly two ways to use TigerGraph CoPilot.
 
 == xref:how2-use-on-cloud.adoc[]
 

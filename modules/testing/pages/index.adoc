@@ -30,10 +30,8 @@ If not, you can run the included docker compose file to create those services.
 docker compose docker-compose.yml up -d --build
 ----
 
-=== Weight and Biases Test Logging
 
-.If you want to use Weights And Biases for logging the test results:
-. First, your `WandB API key` needs to be set in an environment variable on the host machine.
+. If you want to use Weights And Biases for logging the test results, your `WandB API key` needs to be set in an environment variable on the host machine.
 +
 [source, console]
 ----
