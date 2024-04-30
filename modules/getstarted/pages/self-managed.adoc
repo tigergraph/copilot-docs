@@ -22,8 +22,8 @@ In order to utilize TigerGraph CoPilot, you will need:
 
 * To install:
 ** Docker
-** TigerGraph DB
-*** A TigerGraph DB is included if you use the included docker compose file.
+** TigerGraph DB 3.9+
+*** TigerGraph DB 4.0+ is required for SupportAI. The latest TigerGraph DB is included in the docker compose file.
 *** The TigerGraph DB needs to have a graph schema with data.
 +
 ====
@@ -68,7 +68,7 @@ Next, in the same directory as the docker compose file is in, create and fill in
 
 * `configs/db_config.json`
 * `configs/llm_config.json`
-* `configs/milvus_config.json` (Optional if using the docker compose file)
+* `configs/milvus_config.json`
 
 
 === `configs/db_config.json`
@@ -83,7 +83,7 @@ Set the `timeout`, `memory threshold`, and `thread limit` parameters to control 
 * If xref:tigergraph-server:user-access:enabling-user-authentication#_enable_restpp_authentication[token authentication] is enabled in TigerGraph, set `getToken` to `true`.
 ====
 
-You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data (see xref:_optional_create_a_milvus_configuration_file[]), within this config.
+You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data, within this config.
 It is `true` by default.
 
 [source, console]
@@ -237,7 +237,7 @@ Specify, your configuration details in the sample file below:
 
 === configs/milvus_config.json
 
-The settings for Milvus in the docker compose file are the default that CoPilot uses. So if you run the docker compose file as is, then this config file can be omitted. If any change is needed, copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration.
+Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. The `host` address in the template is used by the docker compose file. 
 
 * `username` and `password` can also be configured below if required by your Milvus setup.
 * `enabled` should always be `"true"` for now as Milvus is the only embedding store supported.
