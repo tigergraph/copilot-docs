@@ -1,7 +1,7 @@
 = Get Started with TigerGraph CoPilot
 :experimental:
 
-There are two ways to get started with TIgerGraph CoPilot.
+There are two ways to get started with TigerGraph CoPilot.
 
 == xref:tg-copilot:getstarted:oncloud.adoc[]
 
