@@ -1,4 +1,4 @@
-= Release Notes
+= TigerGraph CoPilot Release Notes
 :experimental:
 //:page-aliases: change-log.adoc, release-notes.adoc
 :toc:
