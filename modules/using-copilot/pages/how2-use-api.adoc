@@ -1,4 +1,4 @@
-= How to use the TigerGraph CoPliot API
+= How to use the TigerGraph CoPilot API
 :experimental:
 
 After authentication you can access TigerGraph CoPilot via its API for both self-managed and TigerGraph Cloud managed services.
