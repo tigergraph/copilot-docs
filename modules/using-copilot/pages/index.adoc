@@ -2,7 +2,7 @@
 :experimental:
 :tabs:
 
-There are mainly two ways to use TigerGraph CoPilot.
+There are two main ways to use TigerGraph CoPilot.
 
 == xref:how2-use-on-cloud.adoc[]
 
@@ -23,12 +23,12 @@ Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
 ////
 == xref:how2-use-self-managed.adoc[]
 
-learn how to use the five ways to interact with a xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed] instance of the TigerGraph CoPilot service:
+Learn the different ways to interact with a xref:tg-copilot:getstarted:self-managed.adoc[Self-Managed] instance of the TigerGraph CoPilot service:
 
 * A Swagger documentation page.
 * A Chat client.
 * The pyTigerGraph client.
 * A LangChain client.
-* And the REST API.
+* The REST API.
 ////
 
