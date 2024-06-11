@@ -42,10 +42,10 @@ The API key verifies the identity of the requester, ensuring that the request is
 +
 Currently, TigerGraph CoPilot Supports:
 +
-** https://openai.com[OpenAI]
-** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
-** https://azure.microsoft.com/en-us[Azure]
 ** https://aws.amazon.com/bedrock/?trk=36201f68-a9b0-45cc-849b-8ab260660e1c&sc_channel=ps&ef_id=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE:G:s&s_kwcid=AL!4422!3!692006004850!e!!g!!aws%20bedrock!21048268689!159639953975&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE[AWS Bedrock]
+** https://azure.microsoft.com/en-us[Azure]
+** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
+** https://openai.com[OpenAI] (for CoPilot on TigerGraph Cloud only)
 +
 [NOTE]
 ====
