@@ -53,6 +53,7 @@ xref:tg-copilot:intro:overview.adoc[Overview] |
 xref:tg-copilot:intro:archtecture-overview.adoc[Architecture] |
 xref:tg-copilot:intro:inquiryai-overview.adoc[InquiryAI] |
 xref:tg-copilot:intro:supportai-overview.adoc[SupportAI]
+
 ¦
 image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
 *Contribute*
@@ -74,5 +75,5 @@ See other documents to help support your TigerGraph CoPilot journey.
 
 xref:tg-copilot:resources:index.adoc[] |
 xref:tg-copilot:resources:glossary.adoc[Glossary]
-¦
+
 |===
