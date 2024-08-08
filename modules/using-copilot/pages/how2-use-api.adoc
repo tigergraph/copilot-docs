@@ -1,4 +1,4 @@
-= How to use the TigerGraph CoPilot API
+= How to access CoPilot vis its API
 :experimental:
 
 After authentication you can access TigerGraph CoPilot via its API for both self-managed and TigerGraph Cloud managed services.
@@ -7,15 +7,10 @@ After authentication you can access TigerGraph CoPilot via its API for both self
 * REST HTTP endpoints
 * pyTigerGraph
 
-[NOTE]
-====
-LangChain interface will be added in the near future.
-====
-
 include::partial$authentication.adoc[]
 
 == REST HTTP Endpoints
-For self-managed services, the full list of available HTTP endpoints can be found at the `/docs` path on your host’s address, e.g., http://localhost/docs.
+For self-managed services, the full list of available HTTP endpoints can be found at the `/docs` path on your host’s address, e.g., http://localhost:8000/docs.
 
 image:SwaggerDocUX.png[]
 
