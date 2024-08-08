@@ -1,0 +1,33 @@
+= How to build knowledge graphs from documents
+:experimental:
+
+CoPilot streamlines the process to build a knowledge graph from your documents. The knowledge graph can then be used by CoPilot to answer your knowledge questions but also as a powerful way to represent the knowledge in your documents for further management and analysis.
+
+Currently, only text documents are supported and your documents need to be processed into JSONL or CSV files (details below) to be ingested by CoPilot. The text will be used by an LLM to answer questions so it has to be human readable such as plain words, or semi-structured such as Markdown. Other structured text such as HTML may or may not work depending on the LLM and it is recommended to convert them to Markdown or remove the tags first. 
+
+* JSONL: The documents should be in a JSONL file where each line is of the following format: `{"url": "some_url_here", "content": "Text of the document"}`. The actual field names don’t matter, but two fields are required: one for the unique ID of the document and one for the content as a string.
+* CSV: Each row corresponds to a document. Two columns are required: one for the ID of the document and one for the content as a string. 
+
+Next, you just need to create an empty graph and CoPilot will take care of schema creation and the rest.
+
+To start creating the schema, call the `/{graphname}/supportai/initialize` endpoint or run the `initializeSupportAI` in pyTigerGraph. 
+
+With the schema created successfully, then either call the `/{graphname}/supportai/create_ingest` endpoint or run the `createDocumentIngest` function in pyTigerGraph, to tell CoPilot how to load the documents. Both methods take the following information:
+* data_source: “s3”, “abs” or “gcs”. More data sources will be supported in the future.
+* data_source_config: please see database’s documentation on the configurations for those data sources for details: https://docs.tigergraph.com/tigergraph-server/current/data-loading/load-from-cloud#_aws_s3[s3], https://docs.tigergraph.com/tigergraph-server/current/data-loading/load-from-cloud#_azure_blob_storage[azure blob], https://docs.tigergraph.com/tigergraph-server/current/data-loading/load-from-cloud#_google_cloud_storage[google cloud storage].
+* loader_config: which field (column) name in the data file is for document ID and which for document content, e.g., `{"doc_id_field": "url", "content_field": "content"}`.
+* file_format: “json” or “csv”.
+
+Then call the `/{graphname}/supportai/ingest` endpoint or `runDocumentIngest` function in pyTigerGraph to start ingesting data. Both methods take the following information:
+* load_job_id: ID of the load job. It is included in the response when creating the ingestion job.
+* data_source_id: ID of the data source. It is also included in the response when creating the ingestion job.
+* file_path: url of the data file, .e.g, "s3://tg-documentation/pytg_current/pytg_current.jsonl".
+
+Finally, start knowledge graph extraction by calling the `/{graphname}/supportai/forceupdate` endpoint or the `forceConsistencyUpdate` function. This also asks CoPilot to monitor the data source, and any update there will be loaded to CoPilot automatically. 
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
