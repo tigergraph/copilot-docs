@@ -1,4 +1,9 @@
 * xref:tg-copilot:using-copilot:index.adoc[Using CoPilot]
-** xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[On Cloud]
-//** xref:tg-copilot:using-copilot:how2-use-self-managed.adoc[Self-Managed]
-** xref:tg-copilot:using-copilot:how2-use-api.adoc[APIs]
+** Access CoPilot
+*** xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[On Cloud]
+*** xref:tg-copilot:using-copilot:how2-use-chat.adoc[Chatbot]
+*** xref:tg-copilot:using-copilot:how2-use-api.adoc[APIs]
+** Use Case
+*** xref:tg-copilot:using-copilot:how2-natural-language-query.adoc[Natural Language Query]
+*** xref:tg-copilot:using-copilot:how2-build-knowledge-graph.adoc[Build Knowledge Graph]
+*** xref:tg-copilot:using-copilot:how2-graphrag.adoc[RAG]
