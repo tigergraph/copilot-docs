@@ -1,0 +1,36 @@
+= How to perform RAG on knowledge graph
+:experimental:
+
+After ingesting your documents into the knowledge graph in TigerGraph, CoPilot can answer your questions by searching through the knowledge graph. This process is typically known as retrieval-agumented generation or RAG.
+
+The TigerGraph Cloud UI doesn’t support this function currently, but CoPilot’s built-in chat interface does. When you submit your question and the working graph is the knowledge graph, CoPilot will answer your question by searching the knowledge graph. You can also switch between different RAG methods to see which one generates the most plausible answer. (See Chat Interface section for how to switch between the methods). Three RAG methods are available currently
+* hnsw_overlap: This method uses a combination of vector search and graph traversal to find the most relevant information to the query. It uses the HNSW algorithm to search the embeddings of documents, document chunks, entities, and relationships. These results serve as the starting point for the graph traversal. The graph traversal is used to find the most relevant information to the question.
+* hnsw: This method uses the HNSW algorithm to search the embeddings of one of the document, document chunk, entity, or relationship vector indices. It returns the most relevant information to the query based on the embeddings. This method is what you would expect from a traditional vector RAG solution.
+* sibling: This method is very similar to the hnsw Vector Search method, but it uses the sibling (IS_AFTER) relationships between document chunks to expand the context around the document chunk that is most relevant to the query. This method is useful when you want to get more context around the most relevant document chunk.
+
+Next, you can send your question through the `/{graphname}/supportai/answerquestion` endpoint or the `answerQuestion` function in pyTigerGraph. Both methods take in the following information:
+* question: Your question.
+* method: "vdb" (i.e., hnsw), "hnswoverlap", or "sibling", as introduced above.
+* method_parameters: parameters for the RAG method.
+  * For vdb, the method parameters are as follows:
+    * index (str): The vector embedding index to use. Can be “Document”, “DocumentChunk”, “Entity”, or “Relationship” - “DocumentChunk” is the recommended index to use.
+    * top_k (int): The number of the most similar vectors and associated data to retrieve
+    * withHyDE (bool): Whether or not to generate a Hypothetical Document Embedding to use for retrieval.
+  * For hnswoverlap, the parameters are as follows:
+    * indices (list[str]): The embedding indices to use. Can be any combination of “Document”, “DocumentChunk”, “Entity”, and “Relationship”. Recommended to be [“Document”, “DocumentChunk”, “Entity”, “Relationship”].
+    * top_k (int): The number of the most similar vectors and associated data to retrieve from each vector index.
+    * num_hops (int): the number of hops to expand out into the graph from the retrieved vertices. Recommended to be 1-2.
+    * num_seen_min (int): the minimal number of times that each vertex has to be found in the expansion step to be included in the final retrieved context. Recommended to be 2-3.
+  * For sibling, the parameters are as follows:
+    * index (str): The vector embedding index to use. Should be “DocumentChunk”.
+    * top_k (int): The number of most similar vectors and associated data to retrieve from the vector index.
+    * lookback (int): the number of document chunks before the retrieved chunk to return
+    * lookahead (int): the number of document chunks after the retrieved chunk to return
+    * withHyDE (bool): Whether or not to generate a Hypothetical Document Embedding to use for retrieval
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+
