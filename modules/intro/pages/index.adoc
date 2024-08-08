@@ -11,7 +11,7 @@ TigerGraph CoPilot is still in beta release and the documentation is in progress
 
 [IMPORTANT]
 ====
-TigerGraph CoPilot beta is  for personal or R&D use and not for production use.
+TigerGraph CoPilot beta is  for personal or R&D use and not for production use. 
 ====
 
 == Get to Know Your TigerGraph CoPilot
