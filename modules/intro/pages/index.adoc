@@ -1,4 +1,4 @@
-= TigerGraph CoPliot
+= TigerGraph CoPilot
 :experimental:
 :page-aliases: copilot-overview.adoc
 
