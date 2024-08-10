@@ -2,15 +2,34 @@
 :experimental:
 :tabs:
 
-There are two main ways to use TigerGraph CoPilot.
+CoPilot is friendly to both technical and non-technical users. There is a graphical chat interface as well as API access to CoPilot. Function-wise, CoPilot can answer your questions by calling existing queries in the database (InquiryAI), build a knowledge graph from your documents (SupportAI), and answer knowledge questions based on your documents (SupportAI). 
 
-== xref:how2-use-on-cloud.adoc[]
+== How to Access CoPilot
+=== xref:how2-use-on-cloud.adoc[]
 
 Learn how to use TigerGraph CoPilot on the cloud.
 
-== xref:tg-copilot:using-copilot:how2-use-api.adoc[]
+=== xref:how2-use-chat.adoc[]
 
-Learn how to use TigerGraph CoPilot APIs.
+Learn how to access self-managed CoPilot via its chat interface.
+
+=== xref:how2-use-api.adoc[]
+
+Learn how to access CoPilot via APIs.
+
+== What to Do with CoPilot
+
+=== xref:how2-natural-language-query.adoc[]
+
+Learn how to query your graphs with CoPilot.
+
+=== xref:how2-build-knowledge-graph.adoc[]
+
+Learn how to build knowledge graphs from documents with CoPilot.
+
+=== xref:how2-graphrag.adoc[]
+
+Learn how to perform retrieval-augmented generation (RAG) on the knowledge graph built from your documents.
 
 == Next Steps
 

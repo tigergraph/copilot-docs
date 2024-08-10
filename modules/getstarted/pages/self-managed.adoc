@@ -2,16 +2,13 @@
 :experimental:
 :tabs:
 
-//A self-managed TigerGraph CoPilot Service is a pulled docker image that you can run locally to use with your TigerGraph data and connected to the LLM provider of your choice.
 
-TigerGraph CoPilot is open-source on https://github.com/tigergraph/CoPilot[ GitHub], which can be deployed to your own infrastructure.
-It only includes the backend service of CoPilot but you can still access all of its functions through the xref:tg-copilot:using-copilot:how2-use-api.adoc[ APIs].
 
-The difference from CoPilot on TigerGraph Cloud is the absence of the graphical user interface and the extra steps to set a self-managed service up.
+TigerGraph CoPilot is an open-source project with a https://github.com/tigergraph/CoPilot[ GitHub] repository, which can be deployed to your own infrastructure.
 
 [TIP]
 ====
-If you don’t need to extend the source code of CoPilot, the quickest way is to deploy its docker image with the docker compose file in the repo.
+If you don’t need to extend the source code of CoPilot, the quickest way is to deploy its docker images with the docker compose file in the repo.
 ====
 
 You will need the following prerequisites.
@@ -22,18 +19,16 @@ In order to utilize TigerGraph CoPilot, you will need:
 
 * To install:
 ** Docker
-** TigerGraph DB 3.9+
-*** TigerGraph DB 4.0+ is required for SupportAI. The latest TigerGraph DB is included in the docker compose file.
-*** The TigerGraph DB needs to have a graph schema with data.
+** TigerGraph DB 3.9+. (For 3.x, you will need to install a few user defined functions (UDFs). Please see Step 5 below for details.)
 +
 ====
-For installing Docker and a TigerGraph DB see our documentation on xref:3.10.1@tigergraph-server:getting-started:docker.adoc[].
+For installing Docker and a TigerGraph DB see our documentation on xref:tigergraph-server:getting-started:docker.adoc[].
 
 For a graph schema and data refer to our xref:gsql-ref:appendix:example-graphs.adoc[] and
 see our documentation on xref:gsql-ref:tutorials:gsql-101/define-a-schema.adoc[Defining a Schema] and xref:gsql-ref:tutorials:gsql-101/load-data-gsql-101.adoc[Loading Data] in the xref:gsql-ref:tutorials:gsql-101/index.adoc[] tutorial.
 ====
 
-* An LLM provider  API key,
+* An LLM provider and its API key
 +
 ====
 An LLM provider refers to a company or organization that offers Large Language Models (LLMs) as a service.
@@ -45,22 +40,27 @@ Currently, TigerGraph CoPilot Supports:
 ** https://aws.amazon.com/bedrock/?trk=36201f68-a9b0-45cc-849b-8ab260660e1c&sc_channel=ps&ef_id=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE:G:s&s_kwcid=AL!4422!3!692006004850!e!!g!!aws%20bedrock!21048268689!159639953975&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE[AWS Bedrock]
 ** https://azure.microsoft.com/en-us[Azure]
 ** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
-** https://openai.com[OpenAI] (for CoPilot on TigerGraph Cloud only)
+** https://openai.com[OpenAI]
+** Ollama
+** Hugging Face
 +
 [NOTE]
 ====
-Users require only one provider.
+Only one provider is required.
 ====
 
+As an example of how to obtain your API key from providers such as OpenAI, please refer to https://platform.openai.com/api-keys.
 
 == 1) Setup
 
-First, users need to get the TigerGraph CoPilot image and prep the environment.
+First, users need to get the TigerGraph CoPilot images and prep the environment.
 
 .You can either:
 
-* Download the file `docker-compose.yml` directly from https://raw.githubusercontent.com/tigergraph/copilot/main/docker-compose.yml[GitHub].
-* Clone the repo `git clone https://github.com/tigergraph/CoPilot`.
+* Download the file https://raw.githubusercontent.com/tigergraph/copilot/main/docker-compose.yml[docker-compose.yml] directly.
+* Or, clone the repo `git clone https://github.com/tigergraph/CoPilot`.
+
+The docker compose file contains all dependencies for CoPilot including a Milvus database. If any service is not needed, please feel free to remove it or set its scale to 0 when running the compose file (details later). Besides, CoPilot comes with a Swagger API documentation page when it is deployed. If you wish to disable it, you can set the `PRODUCTION` environment variable to true for the CoPilot service in the compose file. 
 
 == 2) Set up Configuration Files
 
@@ -69,36 +69,36 @@ Next, in the same directory as the docker compose file is in, create and fill in
 * `configs/db_config.json`
 * `configs/llm_config.json`
 * `configs/milvus_config.json`
+* `configs/chat_config.json`
 
 
-=== `configs/db_config.json`
+=== TigerGraph Database Configuration
 
-Copy the below into `configs/db_config.json` and edit the `hostname` and `getToken` fields to match your database's configuration.
+Copy the below into `configs/db_config.json` and edit the `hostname` and `getToken` fields to match your database's configuration. 
+
 
 Set the `timeout`, `memory threshold`, and `thread limit` parameters to control how much of the database's resources are consumed when answering a question.
 
 [NOTE]
 ====
-* If you are running TigerGraph outside of docker compose, change the `hostname` to match its address (e.g., `https://your-TgCloud-hostname`).
+* If you the docker compose file as-is, you don't need to change anything. “ecc” and “chat_history_api” are the addresses of internal components of CoPilot.
 * If xref:tigergraph-server:user-access:enabling-user-authentication#_enable_restpp_authentication[token authentication] is enabled in TigerGraph, set `getToken` to `true`.
 ====
-
-You can also disable the `consistency_checker`, which reconciles Milvus and TigerGraph data, within this config.
-It is `true` by default.
 
 [source, console]
 ----
 {
-"hostname": "http://tigergraph",
-"getToken": false,
-"default_timeout": 300,
-"default_mem_threshold": 5000,
-"default_thread_limit": 8,
-"enable_consistency_checker": true
+    "hostname": "http://tigergraph",
+    "getToken": true,
+    "default_timeout": 300,
+    "default_mem_threshold": 5000,
+    "default_thread_limit": 8,
+    "ecc": "http://eventual-consistency-service:8001",
+    "chat_history_api": "http://chat-history:8002"
 }
 ----
 
-=== `configs/llm_config.json`
+=== LLM Provider Configuration
 Next, in that `configs/llm_config.json` file, copy your LLM provider's JSON config template below, and fill out the appropriate fields.
 
 
@@ -235,9 +235,9 @@ Specify, your configuration details in the sample file below:
 
 
 
-=== configs/milvus_config.json
+=== Milvus Configuration
 
-Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. The `host` address in the template is used by the docker compose file. 
+Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. If running the docker compose file as-is, then you don’t need to change anything. The `host` address in the template is used by the docker compose file. 
 
 * `username` and `password` can also be configured below if required by your Milvus setup.
 * `enabled` should always be `"true"` for now as Milvus is the only embedding store supported.
@@ -245,17 +245,32 @@ Copy the below into `configs/milvus_config.json` and edit the `host` and `port` 
 [source, console]
 ----
 {
-"host": "milvus-standalone",
-"port": 19530,
-"username": "",
-"password": "",
-"enabled": "true"
+    "host": "milvus-standalone",
+    "port": 19541,
+    "username": "",
+    "password": "",
+    "enabled": "true",
+    "sync_interval_seconds": 60
 }
 ----
 
-== (Optional) Logging
+== Chat History Configuration
+Copy the below into `configs/chat_config.json``. You shouldn’t need to change anything unless you change the port of the chat history service in the docker compose file.
 
-Users can also configure logging in TigerGraph Co-Pilot service.
+[source, console]
+----
+{
+    "apiPort":"8002",
+    "dbPath": "chats.db",
+    "dbLogPath": "db.log",
+    "logPath": "requestLogs.jsonl",
+    ​​"conversationAccessRoles": ["superuser", "globaldesigner"]
+}
+----
+
+== 3) (Optional) Logging
+
+Users can also configure logging in TigerGraph CoPilot service.
 
 === Create log configuration file
 
@@ -264,9 +279,9 @@ Copy the below into `configs/log_config.json` and edit the appropriate values to
 [source, console]
 ----
 {
-"log_file_path": "logs",
-"log_max_size": 10485760,
-"log_backup_count": 10
+    "log_file_path": "logs",
+    "log_max_size": 10485760,
+    "log_backup_count": 10
 }
 ----
 
@@ -282,7 +297,7 @@ Operational and audit logs are recorded.
 
 === Configure Logging Level in Dockerfile
 
-To configure the logging level of the service, edit the `Dockerfile`.
+To configure the logging level of the service, edit the docker compose file.
 
 .By default, the logging level is set to "INFO".
 [source, console]
@@ -319,9 +334,44 @@ This line can be changed to support different logging levels.
 ¦ All messages are processed.
 |===
 
-== 3) Run the Docker Image
+== 4) Start CoPilot
 
-Now, simply run `docker compose up -d` and wait for all the services to start.
+Now, simply run `docker compose up -d` and wait for all the services to start. If you don’t want to use the included Milvus DB, you can set its scale to 0 to not start it: `docker compose up -d --scale milvus-standalone=0 --scale etcd=0 --scale minio=0`.
+
+== 5) Install UDFs
+This step is not needed for TigerGraph databases of version 4.x. For TigerGraph 3.x, we need to install a few user defined functions (UDFs) for CoPilot to work.
+
+1. On the machine that hosts the TigerGraph database, switch to the user of TigerGraph: `sudo su - tigergraph`. If TigerGraph is running on a cluster, you can do this on any one of the machines.
+2. Download the two files https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprFunctions.hpp[ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprUtil.hpp[ExprUtil.hpp].
++
+[NOTE]
+====
+If you already have installed UDFs, copy them to those two files. Installing the UDF files will overwrite any UDFs already installed in the database.
+====
+3. In terminal, run the following command to enable UDF installation
++
+[source, console]
+----
+gadmin config set GSQL.UDF.EnablePutTgExpr true
+gadmin config set GSQL.UDF.Policy.Enable false
+gadmin config apply
+gadmin restart GSQL
+----
+4. Enter GSQL shell, and run the following command to install the UDF files. 
++
+[source, console]
+----
+PUT tg_ExprFunctions FROM "./tg_ExprFunctions.hpp"
+PUT tg_ExprUtil FROM "./tg_ExprUtil.hpp"
+----
+5. Quit GSQL shell, and run the following command in terminal to disable UDF installation for security purpose.
+[source, console]
+----
+gadmin config set GSQL.UDF.EnablePutTgExpr false
+gadmin config set GSQL.UDF.Policy.Enable true
+gadmin config apply
+gadmin restart GSQL
+----
 
 == Next Steps
 
