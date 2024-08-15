@@ -4,9 +4,19 @@
 :toc:
 :toclevels:2
 
+TigerGraph CoPilot v0.9 was released on Thursday, Aug. 15th 2024.
+
 TigerGraph CoPilot (beta) was released on Monday, Apr. 29th 2024.
 
-== Key Features
+== New Features (v0.9)
+* Refactor of the monolithic CoPilot service into several microservices: copilot, eventual consistency checker, chat history, and ui. This improves the modular architecture of CoPilot, facilitating further maintenance and development.
+* New chat history service that stores conversation history and user feedback for CoPilot.
+* New chat UI that provides a familiar chatbot experience, supporting collection of user feedback (like or dislike) and explanation to answers.
+* Ability to generate queries in OpenCypher to answer a given question.
+* Improved docker compose file for easy deployment.
+* Support of IBM Watsonx, Ollama, and HuggingFace as LLM providers.
+
+== Key Features (beta)
 * xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot] -
 ** *Natural Language Inquiry*: The product’s natural-language and auto-execution capabilities empower non-technical users to focus on mining insights from their data through an AI assistant that they can “talk” to.
 
