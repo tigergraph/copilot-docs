@@ -16,7 +16,7 @@ CoPilot (InquiryAI) can answer your questions by calling installed GSQL queries 
 * tg_shortest_ss_no_wt
 
 To make your own installed queries available to CoPilot, you need to “register” them with CoPilot.
-his can be done by using a REST API or pyTigerGraph.
+This can be done by using a REST API or pyTigerGraph.
 
 == Register Installed Queries
 
