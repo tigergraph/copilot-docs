@@ -4,7 +4,7 @@
 
 
 
-TigerGraph CoPilot is an open-source project with a https://github.com/tigergraph/CoPilot[ GitHub] repository, which can be deployed to your own infrastructure.
+TigerGraph CoPilot is an open-source project on GitHub [https://github.com/tigergraph/CoPilot[]] which can be deployed to your own infrastructure.
 
 [TIP]
 ====
@@ -22,7 +22,7 @@ In order to utilize TigerGraph CoPilot, you will need:
 ** TigerGraph DB 3.9+. (For 3.x, you will need to install a few user defined functions (UDFs). Please see Step 5 below for details.)
 +
 ====
-For installing Docker and a TigerGraph DB see our documentation on xref:tigergraph-server:getting-started:docker.adoc[].
+For installing Docker and a TigerGraph DB, see our documentation on xref:tigergraph-server:getting-started:docker.adoc[].
 
 For a graph schema and data refer to our xref:gsql-ref:appendix:example-graphs.adoc[] and
 see our documentation on xref:gsql-ref:tutorials:gsql-101/define-a-schema.adoc[Defining a Schema] and xref:gsql-ref:tutorials:gsql-101/load-data-gsql-101.adoc[Loading Data] in the xref:gsql-ref:tutorials:gsql-101/index.adoc[] tutorial.
@@ -37,12 +37,13 @@ The API key verifies the identity of the requester, ensuring that the request is
 +
 Currently, TigerGraph CoPilot Supports:
 +
-** https://aws.amazon.com/bedrock/?trk=36201f68-a9b0-45cc-849b-8ab260660e1c&sc_channel=ps&ef_id=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE:G:s&s_kwcid=AL!4422!3!692006004850!e!!g!!aws%20bedrock!21048268689!159639953975&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUsiRU6r4M0IjJdTKEC02qpkCa1UgT6QrsOV-KDa_YS5ioZklnJtI9BoC0E0QAvD_BwE[AWS Bedrock]
+** https://aws.amazon.com/bedrock/[AWS Bedrock]
 ** https://azure.microsoft.com/en-us[Azure]
-** https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735450624-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt-Core-GCP-KWID_43700077223807298-kwd-87853815&utm_term=KW_gcp-ST_gcp&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUrvbQg5mcxwKuKXKU-_2BALLvCXuzr8BBtq7HoXNtBexsuNoypCU9RoCUyMQAvD_BwE&gclsrc=aw.ds[GCP]
+** https://cloud.google.com/ai/llms?hl=en[GCP]
 ** https://openai.com[OpenAI]
-** Ollama
-** Hugging Face
+** https://ollama.com/library?sort=popular[Ollama]
+** https://huggingface.co/models[HuggingFace]
+** https://www.ibm.com/products/watsonx-ai/foundation-models[IBM Watsonx]
 +
 [NOTE]
 ====
@@ -60,7 +61,8 @@ First, users need to get the TigerGraph CoPilot images and prep the environment.
 * Download the file https://raw.githubusercontent.com/tigergraph/copilot/main/docker-compose.yml[docker-compose.yml] directly.
 * Or, clone the repo `git clone https://github.com/tigergraph/CoPilot`.
 
-The Docker Compose file contains all dependencies for CoPilot including a Milvus database. If any service is not needed, please feel free to remove it or set its scale to 0 when running the compose file (details later). Besides, CoPilot comes with a Swagger API documentation page when it is deployed. If you wish to disable it, you can set the `PRODUCTION` environment variable to true for the CoPilot service in the compose file.
+The Docker Compose file contains all dependencies for CoPilot including a Milvus database. If you do not need a particular service, you make edit the Compose file to remove it or set its scale to 0 when running the Compose file (details later). Moreover, CoPilot comes with a Swagger API documentation page when it is deployed.
+If you wish to disable it, you can set the `PRODUCTION` environment variable to true for the CoPilot service in the Compose file.
 
 == 2) Set up Configuration Files
 
@@ -81,7 +83,7 @@ Set the `timeout`, `memory threshold`, and `thread limit` parameters to control 
 
 [NOTE]
 ====
-* If you use the Docker Compose file as-is, you don't need to change anything. “ecc” and “chat_history_api” are the addresses of internal components of CoPilot.
+* If you use the Docker Compose file as is, you don't need to change anything. “ecc” and “chat_history_api” are the addresses of internal components of CoPilot.
 * If xref:tigergraph-server:user-access:enabling-user-authentication#_enable_restpp_authentication[token authentication] is enabled in TigerGraph, set `getToken` to `true`.
 ====
 
@@ -99,7 +101,7 @@ Set the `timeout`, `memory threshold`, and `thread limit` parameters to control 
 ----
 
 === LLM Provider Configuration
-Next, in that `configs/llm_config.json` file, copy your LLM provider's JSON config template below, and fill out the appropriate fields.
+Next, in the `configs/llm_config.json` file, paste in your LLM provider's JSON config template from below, and fill out the appropriate fields.
 
 
 {empty} +
@@ -237,7 +239,7 @@ Specify, your configuration details in the sample file below:
 
 === Milvus Configuration
 
-Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. If running the Docker Compose file as-is, then you don’t need to change anything. The `host` address in the template is used by the Docker Compose file.
+Milvus is CoPilot's vector database. Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. If running the Docker Compose file as is, you don’t need to change anything. The `host` address in the template is used by the Docker Compose file.
 
 * `username` and `password` can also be configured below if required by your Milvus setup.
 * `enabled` should always be `"true"` for now as Milvus is the only embedding store supported.
@@ -286,7 +288,7 @@ Copy the below into `configs/log_config.json` and edit the appropriate values to
 ----
 
 The log is rotated and the rotation is based on the size and backups.
-These configurations are applied in the `LogWriter` to the standard python logging package.
+These configurations are applied in the `LogWriter` to the standard Python logging package.
 
 Operational and audit logs are recorded.
 
@@ -339,16 +341,16 @@ This line can be changed to support different logging levels.
 Now, simply run `docker compose up -d` and wait for all the services to start. If you don’t want to use the included Milvus DB, you can set its scale to 0 to not start it: `docker compose up -d --scale milvus-standalone=0 --scale etcd=0 --scale minio=0`.
 
 == 5) Install UDFs
-This step is not needed for TigerGraph databases of version 4.x. For TigerGraph 3.x, we need to install a few user defined functions (UDFs) for CoPilot to work.
+This step is not needed for TigerGraph databases version 4.x. For TigerGraph 3.x, we need to install a few user defined functions (UDFs) for CoPilot to work.
 
 1. On the machine that hosts the TigerGraph database, switch to the user of TigerGraph: `sudo su - tigergraph`. If TigerGraph is running on a cluster, you can do this on any one of the machines.
 2. Download the two files https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprFunctions.hpp[ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprUtil.hpp[ExprUtil.hpp].
 +
-[NOTE]
+[CAUTION]
 ====
-If you already have installed UDFs, copy them to those two files. Installing the UDF files will overwrite any UDFs already installed in the database.
+If you already have custom UDFs, copy them to those two files. Installing the UDF files will overwrite any UDFs already installed in the database.
 ====
-3. In terminal, run the following command to enable UDF installation
+3. In a terminal, run the following command to enable UDF installation:
 +
 [source, console]
 ----
@@ -357,14 +359,14 @@ gadmin config set GSQL.UDF.Policy.Enable false
 gadmin config apply
 gadmin restart GSQL
 ----
-4. Enter GSQL shell, and run the following command to install the UDF files. 
+4. Enter a GSQL shell, and run the following command to install the UDF files.
 +
 [source, console]
 ----
 PUT tg_ExprFunctions FROM "./tg_ExprFunctions.hpp"
 PUT tg_ExprUtil FROM "./tg_ExprUtil.hpp"
 ----
-5. Quit GSQL shell, and run the following command in terminal to disable UDF installation for security purpose.
+5. Quit the GSQL shell, and run the following command in the terminal to disable UDF installation for security purpose.
 [source, console]
 ----
 gadmin config set GSQL.UDF.EnablePutTgExpr false
