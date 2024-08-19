@@ -12,25 +12,25 @@ Once TigerGraph CoPilot is visible, it can be added and enabled in your workspac
 
 [NOTE]
 ====
-This process only needs to be done once for your organization.
-If it is already enabled for your organization, please feel free to xref:_1_add_tigergraph_copilot[].
+Enabling CoPilot only needs to be done once for your organization.
+If it is already enabled for your organization, you may proceed to xref:_1_add_tigergraph_copilot[].
 ====
 
 == Prerequisites
 
-Users must have TigerGraph cloud 4.0 access and have created an account.
+Users must have TigerGraph Cloud 4.0 access and have created an account.
 See xref:cloudBeta:overview:index.adoc[] to get started xref:cloudBeta:get-started:how2-signup.adoc[creating an account] and xref:cloudBeta:get-started:how2-login.adoc[logging in].
 
 . Enable CoPilot for your organization. Go to btn:[Marketplace/Add-ons] on the left navigation panel, and btn:[add] TigerGraph CoPilot.
 +
-image::Screenshot 2024-04-26 at 12.14.28 PM.png[]
+image::cloud-enable-copilot.png[]
 . In the pop-up window, follow the instructions and add your LLM provider.
 +
-image::Screenshot 2024-04-26 at 12.15.49 PM.png[width=300]
+image::cloud-add-llm-provider.png[width=300]
 +
 [NOTE]
 ====
-Currently, only OpenAI is supported while GCP, Azure OpenAI, and AWS Bedrock support are coming soon.
+Currently, only OpenAI is supported. GCP, Azure OpenAI, and AWS Bedrock support are coming soon.
 ====
 
 . TigerGraph Cloud 4.0 will test the connection to your LLM provider once you click btn:[Test & Add].
@@ -46,11 +46,11 @@ Once TigerGraph CoPilot is enabled for your organization, follow the steps below
 
 . When creating a workspace, select btn:[TigerGraph CoPilot] in the section of btn:[ Add-ons ].
 +
-image::Screenshot 2024-04-26 at 12.19.21 PM.png[]
+image::cloud-add-copilot-to-workspace.png[]
 
 . A window with a brief introduction to TigerGraph CoPilot will appear.
 +
-image::Screenshot 2024-04-26 at 12.22.22 PM.png[width=300]
+image::cloud-copilot-intro-popup.png[width=300]
 
 . Please select your LLM provider from the dropdown menu at the bottom of the window.
 +
