@@ -40,7 +40,7 @@ image:TG_Icon_Library-161.png[alt=ai-icon,width=74,height=74]
 Learn the xref:tg-copilot:customization-extensibility:index.adoc[] options to your TigerGraph CoPilot Service.
 
 ¦
-image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
+image:design-database-homecard.png[alt=co-pliotOverview,width=74,height=74]
 *Under the hood*
 
 Go deeper and learn what’s behind the platform.
@@ -64,7 +64,7 @@ See the most up-to-date news with our xref:release-notes:index.adoc[] on TigerGr
 
 
 ¦
-image:referece-homecard.png[alt=ref,width=74,height=74]
+image:reference-homecard.png[alt=ref,width=74,height=74]
 *Resources*
 
 See other documents to help support your TigerGraph CoPilot journey.

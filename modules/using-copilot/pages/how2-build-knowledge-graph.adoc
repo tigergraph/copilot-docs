@@ -3,14 +3,17 @@
 
 CoPilot streamlines the process to build a knowledge graph from your documents. The knowledge graph can then be used by CoPilot to answer your knowledge questions but also as a powerful way to represent the knowledge in your documents for further management and analysis.
 
-Currently, only text documents are supported and your documents need to be processed into JSONL or CSV files (details below) to be ingested by CoPilot. The text will be used by an LLM to answer questions so it has to be human readable such as plain words, or semi-structured such as Markdown. Other structured text such as HTML may or may not work depending on the LLM and it is recommended to convert them to Markdown or remove the tags first. 
+Currently, only text documents are supported and your documents need to be processed into JSONL or CSV files (details below) to be ingested by CoPilot.
+The text will be used by an LLM to answer questions, so the text has to be human readable such as plain words, or semi-structured such as Markdown.
+Other structured text such as HTML may or may not work depending on the LLM.
+We recommend converting them to Markdown or removing the tags first.
 
 * JSONL: The documents should be in a JSONL file where each line is of the following format: `{"url": "some_url_here", "content": "Text of the document"}`. The actual field names don’t matter, but two fields are required: one for the unique ID of the document and one for the content as a string.
 * CSV: Each row corresponds to a document. Two columns are required: one for the ID of the document and one for the content as a string. 
 
-Next, you just need to create an empty graph and CoPilot will take care of schema creation and the rest.
+Next, you just need to create an empty graph and CoPilot will take care of creating a graph schema and populating the graph with data from your documents.
 
-To start creating the schema, call the `/{graphname}/supportai/initialize` endpoint or run the `initializeSupportAI` in pyTigerGraph. 
+To start creating the schema, call the `/{graphname}/supportai/initialize` endpoint or run the `initializeSupportAI` in pyTigerGraph.
 
 With the schema created successfully, then either call the `/{graphname}/supportai/create_ingest` endpoint or run the `createDocumentIngest` function in pyTigerGraph, to tell CoPilot how to load the documents. Both methods take the following information:
 
