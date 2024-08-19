@@ -210,6 +210,7 @@ Specify, your configuration details in the sample file below:
 +
 [source, console]
 ----
+{
     "model_name": "Claude-3-haiku",
     "embedding_service": {
         "embedding_model_service": "bedrock",
@@ -230,6 +231,113 @@ Specify, your configuration details in the sample file below:
             "temperature": 0,
         },
         "prompt_path": "./app/prompts/aws_bedrock_claude3haiku/"
+    }
+}
+----
+
+Ollama::
++
+Example configuration for a model from Ollama is shown below. Please specify your configuration details:
++
+[source, console]
+----
+{
+    "model_name": "GPT-4",
+    "embedding_service": {
+        "embedding_model_service": "openai",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": ""
+        }
+    },
+    "completion_service": {
+        "llm_service": "ollama",
+        "llm_model": "calebfahlgren/natural-functions",
+        "model_kwargs": {
+            "temperature": 0.0000001
+        },
+        "prompt_path": "./app/prompts/openai_gpt4/"
+    }
+}
+----
+
+Hugging Face::
++
+Example configuration for a model on Hugging Face with a dedicated endpoint is shown below. Please specify your configuration details:
++
+[source, console]
+----
+{
+    "model_name": "llama3-8b",
+    "embedding_service": {
+        "embedding_model_service": "openai",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": ""
+        }
+    },
+    "completion_service": {
+        "llm_service": "huggingface",
+        "llm_model": "hermes-2-pro-llama-3-8b-lpt",
+        "endpoint_url": "https:endpoints.huggingface.cloud",
+        "authentication_configuration": {
+            "HUGGINGFACEHUB_API_TOKEN": ""
+        },
+        "model_kwargs": {
+            "temperature": 0.1
+        },
+        "prompt_path": "./app/prompts/openai_gpt4/"
+    }
+}
+----
+Example configuration for a model on Hugging Face with a serverless endpoint is shown below. Please specify your configuration details:
++
+[source, console]
+----
+{
+    "model_name": "Llama3-70b",
+    "embedding_service": {
+        "embedding_model_service": "openai",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": ""
+        }
+    },
+    "completion_service": {
+        "llm_service": "huggingface",
+        "llm_model": "meta-llama/Meta-Llama-3-70B-Instruct",
+        "authentication_configuration": {
+            "HUGGINGFACEHUB_API_TOKEN": ""
+        },
+        "model_kwargs": {
+            "temperature": 0.1
+        },
+        "prompt_path": "./app/prompts/llama_70b/"
+    }
+}
+----
+
+Groq::
++
+Example configuration for a model from Groq is shown below. Please specify your configuration details:
++
+[source, console]
+----
+{
+    "model_name": "mixtral-8x7b-32768",
+    "embedding_service": {
+        "embedding_model_service": "openai",
+        "authentication_configuration": {
+            "OPENAI_API_KEY": ""
+        }
+    },
+    "completion_service": {
+        "llm_service": "groq",
+        "llm_model": "mixtral-8x7b-32768",
+        "authentication_configuration": {
+            "GROQ_API_KEY": ""
+        },
+        "model_kwargs": {
+            "temperature": 0.1
+        },
+        "prompt_path": "./app/prompts/openai_gpt4/"
     }
 }
 ----
@@ -256,7 +364,7 @@ Milvus is CoPilot's vector database. Copy the below into `configs/milvus_config.
 }
 ----
 
-== Chat History Configuration
+=== Chat History Configuration
 Copy the below code into `configs/chat_config.json``. You shouldn’t need to change anything unless you change the port of the chat history service in the Docker Compose file.
 
 [source, console]
