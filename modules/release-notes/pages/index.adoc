@@ -10,7 +10,7 @@ TigerGraph CoPilot 0.5 (beta) was released on Apr. 29, 2024.
 
 == New in CoPilot 0.9
 
-** *Support for more LLM providers and models*: Ollama, HuggingFace and IBN Watsonx.
+** *Support for more LLM providers and models*: Ollama and HuggingFace.
 
 ** *Generates OpenCypher queries* if the preloaded queries aren't suitable to answer a question.
 
