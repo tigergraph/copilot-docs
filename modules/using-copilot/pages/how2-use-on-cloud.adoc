@@ -1,4 +1,4 @@
-= How to use TigerGraph CoPliot On Cloud
+= How to use TigerGraph CoPilot On Cloud
 :experimental:
 
 Using TigerGraph CoPilot on cloud is intuitive and straight forward with the TigerGraph Cloud UI.

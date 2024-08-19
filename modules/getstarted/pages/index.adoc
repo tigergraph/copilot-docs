@@ -15,4 +15,10 @@ Download a local self-managed TigerGraph CoPilot service.
 
 Next, go to xref:tg-copilot:using-copilot:index.adoc[] to learn how to use TigerGraph CoPilot.
 
+* xref:tg-copilot:testing:index.adoc[Test TigerGraph CoPilot] - Once setup with TigerGraph CoPilot users can test the service.
+
+* xref:tg-copilot:customization-extensibility:index.adoc[] - These options allow users to expand and customize the TigerGraph CoPilot Service.
+
+* xref:contribution:index.adoc[] - Join the community and contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
+
 Return to xref:tg-copilot:intro:index.adoc[] for a different topic.

@@ -21,7 +21,7 @@ Organizing the data as a knowledge graph allows a chatbot to access accurate, fa
 
 == Next Steps
 
-Next, go to xref:tg-copilot:contrbution:index.adoc[] see how you can contribute to TigerGraph CoPilot.
+Next, go to xref:contribution:index.adoc[] see how you can contribute to TigerGraph CoPilot.
 
 Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
 

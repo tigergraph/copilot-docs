@@ -20,7 +20,7 @@ The configs will be mounted for the container to access.
 [NOTE]
 ====
 Make sure that all the dependencies such as database and Milvus are ready.
-If not, you can run the included docker compose file to create those services.
+If not, you can run the included Docker Compose file to create those services.
 ====
 
 . Run:
@@ -38,7 +38,7 @@ docker compose docker-compose.yml up -d --build
 export WANDB_API_KEY=KEY
 ----
 
-. Then, you can build the docker container from the `Dockerfile.tests` file and run the test script in the container.
+. Then, you can build the Docker container from the `Dockerfile.tests` file and run the test script in the container.
 +
 [source, console]
 ----

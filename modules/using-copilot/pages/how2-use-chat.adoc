@@ -1,7 +1,7 @@
-= How to use TigerGraph CoPliot via its chat interface
+= How to use TigerGraph CoPilot via its chat interface
 :experimental:
 
-CoPilot comes with a chat interface. If you start CoPilot by running the docker compose file, it can be visited at http://localhost:80.
+CoPilot comes with a chat interface. If you start CoPilot by running the Docker Compose file, it can be visited at http://localhost:80.
 
 == Chat Interface
 
