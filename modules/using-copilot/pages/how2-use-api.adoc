@@ -1,9 +1,10 @@
-= How to access CoPilot vis its API
+= How to access CoPilot via its API
 :experimental:
 
 After authentication you can access TigerGraph CoPilot via its API for both self-managed and TigerGraph Cloud managed services.
 
 .Two types of API access are provided:
+
 * REST HTTP endpoints
 * pyTigerGraph
 
