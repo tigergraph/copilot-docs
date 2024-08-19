@@ -8,7 +8,7 @@ TigerGraph CoPilot is an open-source project with a https://github.com/tigergrap
 
 [TIP]
 ====
-If you don’t need to extend the source code of CoPilot, the quickest way is to deploy its docker images with the docker compose file in the repo.
+If you don’t need to extend the source code of CoPilot, the quickest way is to deploy its Docker images with the Docker Compose file in the repo.
 ====
 
 You will need the following prerequisites.
@@ -60,11 +60,11 @@ First, users need to get the TigerGraph CoPilot images and prep the environment.
 * Download the file https://raw.githubusercontent.com/tigergraph/copilot/main/docker-compose.yml[docker-compose.yml] directly.
 * Or, clone the repo `git clone https://github.com/tigergraph/CoPilot`.
 
-The docker compose file contains all dependencies for CoPilot including a Milvus database. If any service is not needed, please feel free to remove it or set its scale to 0 when running the compose file (details later). Besides, CoPilot comes with a Swagger API documentation page when it is deployed. If you wish to disable it, you can set the `PRODUCTION` environment variable to true for the CoPilot service in the compose file. 
+The Docker Compose file contains all dependencies for CoPilot including a Milvus database. If any service is not needed, please feel free to remove it or set its scale to 0 when running the compose file (details later). Besides, CoPilot comes with a Swagger API documentation page when it is deployed. If you wish to disable it, you can set the `PRODUCTION` environment variable to true for the CoPilot service in the compose file.
 
 == 2) Set up Configuration Files
 
-Next, in the same directory as the docker compose file is in, create and fill in the following configuration files.
+Next, in the same directory as the Docker Compose file is in, create and fill in the following configuration files.
 
 * `configs/db_config.json`
 * `configs/llm_config.json`
@@ -81,7 +81,7 @@ Set the `timeout`, `memory threshold`, and `thread limit` parameters to control 
 
 [NOTE]
 ====
-* If you the docker compose file as-is, you don't need to change anything. “ecc” and “chat_history_api” are the addresses of internal components of CoPilot.
+* If you use the Docker Compose file as-is, you don't need to change anything. “ecc” and “chat_history_api” are the addresses of internal components of CoPilot.
 * If xref:tigergraph-server:user-access:enabling-user-authentication#_enable_restpp_authentication[token authentication] is enabled in TigerGraph, set `getToken` to `true`.
 ====
 
@@ -138,7 +138,7 @@ GCP::
 +
 . Follow the GCP authentication information found https://cloud.google.com/docs/authentication/application-default-credentials#GAC[here] and create a `Service Account` with `VertexAI` credentials.
 +
-. Then, add the following to the docker run command:
+. Then, add the following to the `docker run` command:
 +
 [source, console]
 ----
@@ -237,7 +237,7 @@ Specify, your configuration details in the sample file below:
 
 === Milvus Configuration
 
-Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. If running the docker compose file as-is, then you don’t need to change anything. The `host` address in the template is used by the docker compose file. 
+Copy the below into `configs/milvus_config.json` and edit the `host` and `port` fields to match your Milvus configuration. If running the Docker Compose file as-is, then you don’t need to change anything. The `host` address in the template is used by the Docker Compose file.
 
 * `username` and `password` can also be configured below if required by your Milvus setup.
 * `enabled` should always be `"true"` for now as Milvus is the only embedding store supported.
@@ -255,7 +255,7 @@ Copy the below into `configs/milvus_config.json` and edit the `host` and `port` 
 ----
 
 == Chat History Configuration
-Copy the below into `configs/chat_config.json``. You shouldn’t need to change anything unless you change the port of the chat history service in the docker compose file.
+Copy the below code into `configs/chat_config.json``. You shouldn’t need to change anything unless you change the port of the chat history service in the Docker Compose file.
 
 [source, console]
 ----
@@ -297,7 +297,7 @@ Operational and audit logs are recorded.
 
 === Configure Logging Level in Dockerfile
 
-To configure the logging level of the service, edit the docker compose file.
+To configure the logging level of the service, edit the Docker Compose file.
 
 .By default, the logging level is set to "INFO".
 [source, console]

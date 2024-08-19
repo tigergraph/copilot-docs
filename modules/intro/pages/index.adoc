@@ -1,17 +1,12 @@
-= TigerGraph CoPliot [Dev branch]
+= TigerGraph CoPilot
 :experimental:
 :page-aliases: copilot-overview.adoc
 
-TigerGraph CoPilot is an AI assistant that is meticulously designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks. TigerGraph CoPilot empowers business analysts, data scientists, and developers to use natural language with the ability to run queries against up-to-date data at scale.
-
-[CAUTION]
-====
-TigerGraph CoPilot is still in beta release and the documentation is in progress.
-====
+TigerGraph CoPilot is an AI assistant that is designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks. TigerGraph CoPilot empowers business analysts, data scientists, and developers to use natural language with the ability to run queries against up-to-date data at scale.
 
 [IMPORTANT]
 ====
-TigerGraph CoPilot beta is  for personal or R&D use and not for production use.
+TigerGraph 0.9 is a pre-production release.
 ====
 
 == Get to Know Your TigerGraph CoPilot
@@ -22,8 +17,9 @@ TigerGraph CoPilot beta is  for personal or R&D use and not for production use.
 image:getstarted-homecard.png[alt=getstarted,width=74,height=74]
 *Getting Started*
 
-xref:tg-copilot:getstarted:index.adoc[] guide is to help you get up and running or first checkout our
-xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot Overview] page.
+The xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot Overview] outlines its features and use cases.
+See xref:tg-copilot:getstarted:index.adoc[Get Started with TigerGraph CoPilot] for the fastest way to get set up.
+
 
 ¦
 image:TG_Icon_Library-154.png[alt=ai-icon,width=74,height=74]
@@ -50,15 +46,15 @@ image:designdatbase-homecard.png[alt=co-pliotOverview,width=74,height=74]
 Go deeper and learn what’s behind the platform.
 
 xref:tg-copilot:intro:overview.adoc[Overview] |
-xref:tg-copilot:intro:archtecture-overview.adoc[Architecture] |
+xref:tg-copilot:intro:architecture-overview.adoc[Architecture] |
 xref:tg-copilot:intro:inquiryai-overview.adoc[InquiryAI] |
 xref:tg-copilot:intro:supportai-overview.adoc[SupportAI]
 
 ¦
-image:TG_Icon_Library-107.png[alt=Contbution,width=74,height=74]
+image:TG_Icon_Library-107.png[alt=Contribution,width=74,height=74]
 *Contribute*
 
-Learn how to xref:tg-copilot:contrbution:index.adoc[] to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
+Learn how to xref:contribution:index.adoc[] to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
 
 ¦
 image:documentation-homecard.png[alt=support,width=74,height=74]

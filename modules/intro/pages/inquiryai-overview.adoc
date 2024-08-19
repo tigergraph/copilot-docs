@@ -65,7 +65,7 @@ In the third phase, CoPilot executes the identified query and returns the result
 
 Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:supportai-overview.adoc[].
 
-Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPilot Overview] page for a different topic.
 
 
 
