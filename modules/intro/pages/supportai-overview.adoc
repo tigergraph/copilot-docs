@@ -7,7 +7,7 @@ This functionality will enrich RAG (Retrieval-Augmented Generation) pipelines wi
 
 == Support AI Architecture
 
-image::Screenshot 2024-04-26 at 10.02.58 AM.png[]
+image::SupportAi-Architecture.png[]
 
 With SupportAI, CoPilot creates chatbots with graph-augmented AI on a user's own documents or text data.
 
