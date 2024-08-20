@@ -80,9 +80,9 @@ This solution directly improves the productivity and reduces the cost in typical
 == Next Steps
 
 Next, learn how to xref:tg-copilot:getstarted:index.adoc[] or go deeper learn
-about TigerGraph CoPilot's xref:tg-copilot:intro:archtecture-overview.adoc[]
+about TigerGraph CoPilot's xref:tg-copilot:intro:architecture-overview.adoc[]
 
-Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPilot Overview] page for a different topic.
 
 
 

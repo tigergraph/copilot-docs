@@ -19,7 +19,7 @@ For beta, your own LLM services (from OpenAI, Azure, GCP and AWS Bedrock) are re
 
 Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:inquiryai-overview.adoc[].
 
-Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPliot Overview] page for a different topic.
+Return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPilot Overview] page for a different topic.
 
 
 

@@ -1,0 +1,68 @@
+= How to query your graphs with CoPilot
+:experimental:
+
+CoPilot (InquiryAI) can answer your questions by calling installed GSQL queries or built-in functions. The following built-in functions are supported:
+
+* getEdgeCount
+* getEdgeCountFrom
+* getEdgeStats
+* getEdges
+* getVertexCount
+* getVertexStats
+* getVertices
+* getVerticesById
+* tg_bfs
+* tg_pagerank
+* tg_shortest_ss_no_wt
+
+To make your own installed queries available to CoPilot, you need to “register” them with CoPilot.
+This can be done by using a REST API or pyTigerGraph.
+
+== Register Installed Queries
+
+=== REST HTTP Endpoints
+Register a query by sending information about the query to the `/{graphname}/register_docs` endpoint. The body of the request should contain the following information:
+[source, python]
+----
+[{
+  "function_header": "string",
+  "description": "string",
+  "docstring": "string",
+  "param_types": {},
+  "graphname": "all"
+}]
+----
+* `function_header`: Name of the query.
+* `description`: Human readable description. Optional.
+* `docstring`: Detailed description of the query used by CoPilot (i.e., the LLM) to determine what this query does and what it requires, in order to select which query to invoke and to invoke it correctly, to answer a question.
+* `param_types`: Name and type of every parameter of the query
+
+The `docstring` field is especially important.
+It should contain enough information for the LLM to understand the purpose of this query while being concise and distinctive from other queries’ descriptions.
+You may need to tune this string if CoPilot is not selecting this query to answer a question when it seems that it should.
+
+=== pyTierGraph
+pyTigerGraph provides a convenient function `registerCustomQuery` to register your GSQL queries.
+Please see its https://docs.tigergraph.com/pytigergraph/current/ai/copilot#_registercustomquery[documentation] for details or this https://github.com/tigergraph/CoPilot/blob/main/docs/notebooks/DigitalInfraDemo.ipynb[notebook] as an example.
+
+== Query
+Now, we can ask questions in natural language, and CoPilot will run the relevant query or function to answer them.
+
+If you use the API method, you can send your question to InquiryAI directly. Send a REST request to the `/{graphname}/query` endpoint, where a request body  contaisn your question in the following format:
+[source, python]
+----
+{
+  "query": "YOUR QUESTION",
+}
+----
+
+For pyTigerGraph, you can submit the question to the function https://docs.tigergraph.com/pytigergraph/current/ai/copilot#_query[query()].
+
+If you are on the chat interface, once you submit your question, CoPilot will determine the best way to answer your question: running installed queries or searching the knowledge graph.
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+

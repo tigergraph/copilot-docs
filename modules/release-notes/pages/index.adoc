@@ -4,9 +4,38 @@
 :toc:
 :toclevels:2
 
-TigerGraph CoPilot (beta) was released on Monday, Apr. 29th 2024.
+TigerGraph CoPilot 0.9 was released on Aug. 15, 2024.
 
-== Key Features
+TigerGraph CoPilot 0.5 (beta) was released on Apr. 29, 2024.
+
+== New in CoPilot 0.9
+
+** *Support for more LLM providers and models*: Ollama and HuggingFace.
+
+** *Generates OpenCypher queries* if the preloaded queries aren't suitable to answer a question.
+
+** *Chat history service* that stores conversation history and user feedback.
+
+** *Context-aware conversation*, e.g. using conversation history to understand the context of follow-up questions.
+
+** *Responses can include tables or small subgraphs* (experimental)
+
+** *_Explain_ function* which reports the knowledge resources and reasoning that were applied to generate a response.
+
+** *Chat UI* which incorporates the above features plus:
+* Real-time updates on CoPilot's progress towards responding to your requests
+
+* All these services have APIs, so developers can incorporate them into their own UI design.
+
+** *Improved Docker Compose file* for easier deployment.
+
+** *Refactored to a microservice architecture*
+for greater flexibility, manageability, scalability, and performance.
+
+** *Compatible with TigerGraph DB 3.9+*. Previously, SupportAI required TigerGraph 4.0.
+
+== Key Features (Initial Release)
+
 * xref:tg-copilot:intro:overview.adoc[TigerGraph CoPilot] -
 ** *Natural Language Inquiry*: The product’s natural-language and auto-execution capabilities empower non-technical users to focus on mining insights from their data through an AI assistant that they can “talk” to.
 
@@ -19,12 +48,6 @@ TigerGraph CoPilot (beta) was released on Monday, Apr. 29th 2024.
 * xref:using-copilot:index.adoc[Using TigerGraph CoPilot] - TigerGraph CoPilot is now available in beta release to user to utilize in two ways:
 ** xref:tg-copilot:using-copilot:how2-use-on-cloud.adoc[On Cloud] - Via xref:tg-copilot:getstarted:oncloud.adoc[TigerGraph Cloud 4.0].
 ** xref:tg-copilot:using-copilot:how2-use-api.adoc[APIs] - Through a xref:tg-copilot:getstarted:self-managed.adoc[]
-
-* xref:tg-copilot:testing:index.adoc[Test TigerGraph CoPilot] - Once setup with TigerGraph CoPilot users can test the service.
-
-* xref:tg-copilot:customization-extensibility:index.adoc[] - These options allow users to expand and customize the TigerGraph CoPilot Service.
-
-* xref:tg-copilot:contrbution:index.adoc[] - Join the community and contribute to TigerGraph CoPilot on our https://github.com/tigergraph/CoPilot/blob/main/docs/Contributing.md[Github].
 
 
 

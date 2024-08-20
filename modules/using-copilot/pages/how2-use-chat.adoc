@@ -1,0 +1,33 @@
+= How to use TigerGraph CoPilot via its chat interface
+:experimental:
+
+CoPilot comes with a chat interface. If you start CoPilot by running the Docker Compose file, you'll find the chat interface at http://localhost:80.
+
+== Chat Interface
+
+Once you open the link in your browser, log in with your database username and password.
+
+image::chatbot-login.png[]
+
+That will take you to a familiar chat interface.
+
+image::chatbot.png[]
+
+The graph selector on the top right corner allows you to switch between different graphs, and the RAG method selector on its left allows you to use different RAG methods including the typical vector RAG (HNSW), our graph-based RAG (HNSW_Overlap) and sibling document RAG (Sibling).
+More RAG methods will be added in the future.
+
+. *HNSW*: This method uses the HNSW algorithm to search the embeddings of one of the document, document chunk, entity, or relationship vector indices.
+It returns the most relevant information to the query based on the embeddings. This method is what you would expect from a traditional vector RAG solution.
+. *HNSW_Overlap*: This method uses a combination of vector search and graph traversal to find the most relevant information to the query.
+It uses the HNSW algorithm to search the embeddings of documents, document chunks, entities, and relationships.
+These results serve as the starting point for the graph traversal.
+The graph traversal is used to find the most relevant information to the question.
+. *Sibling*: This method is very similar to the HNSW vector search method, but it uses the sibling (IS_AFTER) relationships between document chunks to expand the context around the document chunk that is most relevant to the query.
+This method is useful when you want to get more context around the most relevant document chunk.
+
+== Next Steps
+
+Next, go to xref:testing:index.adoc[] to learn how to test TigerGraph CoPilot.
+
+Return to xref:tg-copilot:intro:index.adoc[] for a different topic.
+

@@ -1,0 +1,27 @@
+= Architecture Overview
+
+image:TG-CoPilot-Architecture.png[]
+
+TigerGraph CoPilot is an AI assistant designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks.
+The CoPilot framework provides a framework for a growing set of AI capabilities and services.
+Initial capabilities include
+
+* xref:tg-copilot:intro:supportai-overview.adoc[SupportAI] is a knowledge Q&A assistant for documents and graphs.
+It comprises a knowledge graph buider and a Graph-RAG question answering service.
+* xref:tg-copilot:intro:inquiryai-overview.adoc[InquiryAI] is a natural language assistant for graph-powered solutions.
+
+You can interact with CoPilot through both a chat interface and APIs.
+
+[IMPORTANT]
+====
+For beta, your own LLM services (from OpenAI, Azure, GCP and AWS Bedrock) are required to use CoPilot.
+====
+
+== Next Steps
+
+Next, learn about TigerGraph CoPilot's xref:tg-copilot:intro:inquiryai-overview.adoc[].
+
+Or return to xref:tg-copilot:intro:index.adoc[ TigerGraph CoPilot Overview] page for a different topic.
+
+
+
