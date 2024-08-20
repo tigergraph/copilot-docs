@@ -6,9 +6,5 @@ There are two options to authenticate with the TigerGraph Co-Pilot service.
 * The first way is with a `username/password` pair generated from the TigerGraph database.
 
 * The second way is a GSQL secret, also obtained from the database.
-However, when using the GSQL secret, the username field must be specified as `____GSQL____secret`, with the password field containing the secret.
-
-[NOTE]
-====
-If xref:pytigergraph:intro:index.adoc[pyTigerGraph v1.6+] is being used and a connection is created with the `gsqlSecret` parameter, this will already be done for you.
-====
+When using the GSQL secret, the username field must be specified as `____GSQL____secret`, with the password field containing the secret.
+However, if xref:pytigergraph:intro:index.adoc[pyTigerGraph v1.6+] is being used and a connection is created with the `gsqlSecret` parameter, then you don't need to provide a username and password.
