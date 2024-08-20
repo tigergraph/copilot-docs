@@ -43,6 +43,7 @@ Currently, TigerGraph CoPilot Supports:
 ** https://openai.com[OpenAI]
 ** https://ollama.com/library?sort=popular[Ollama]
 ** https://huggingface.co/models[HuggingFace]
+** Groq
 +
 [NOTE]
 ====
