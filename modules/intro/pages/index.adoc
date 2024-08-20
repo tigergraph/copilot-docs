@@ -6,7 +6,7 @@ TigerGraph CoPilot is an AI assistant that is designed to combine the powers of 
 
 [IMPORTANT]
 ====
-TigerGraph 0.9 is a pre-production release.
+TigerGraph CoPilot beta is  for personal or R&D use and not for production use. 
 ====
 
 == Get to Know Your TigerGraph CoPilot
