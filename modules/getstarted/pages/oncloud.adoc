@@ -6,6 +6,7 @@ CoPilot is available as an add-on service to your xref:cloudBeta:resource-manage
 [IMPORTANT]
 ====
 Contact beta-support@tigergraph.com to enable TigerGraph CoPilot as an option in the xref:cloudBeta:integrations:index.adoc[Marketplace].
+Currently, this will be CoPilot 0.5. CoPilot 0.9 will be available on the cloud soon.
 ====
 
 Once TigerGraph CoPilot is visible, it can be added and enabled in your workspace. On setup, a working LLM provider needs to be provided.
