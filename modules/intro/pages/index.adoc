@@ -1,6 +1,6 @@
 = TigerGraph CoPilot
 :experimental:
-:page-aliases: copilot-overview.adoc
+:page-aliases: copilot-overview.adoc, index.adoc
 
 TigerGraph CoPilot is an AI assistant that is designed to combine the powers of graph databases and generative AI to draw the most value from data and to enhance productivity across various business functions, including analytics, development, and administration tasks. TigerGraph CoPilot empowers business analysts, data scientists, and developers to use natural language with the ability to run queries against up-to-date data at scale.
 
