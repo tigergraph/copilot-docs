@@ -452,7 +452,7 @@ Now, simply run `docker compose up -d` and wait for all the services to start. I
 This step is not needed for TigerGraph databases version 4.x. For TigerGraph 3.x, we need to install a few user defined functions (UDFs) for CoPilot to work.
 
 1. On the machine that hosts the TigerGraph database, switch to the user of TigerGraph: `sudo su - tigergraph`. If TigerGraph is running on a cluster, you can do this on any one of the machines.
-2. Download the two files https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprFunctions.hpp[ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/CoPilot/dev/copilot/udfs/milvus/rest/ExprUtil.hpp[ExprUtil.hpp].
+2. Download the two files https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprFunctions.hpp[tg_ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprUtil.hpp[tg_ExprUtil.hpp].
 +
 [CAUTION]
 ====
