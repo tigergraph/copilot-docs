@@ -1,7 +1,7 @@
 name: tg-copilot
 title: TigerGraph CoPilot
-version: 0.9
-display_version: "0.9"
+version: main
+display_version: "main"
 start_page: intro:index.adoc
 
 nav:
