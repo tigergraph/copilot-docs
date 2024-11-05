@@ -451,14 +451,11 @@ Now, simply run `docker compose up -d` and wait for all the services to start. I
 == 5) Install UDFs
 This step is not needed for TigerGraph databases version 4.x. For TigerGraph 3.x, we need to install a few user defined functions (UDFs) for CoPilot to work.
 
-1. On the machine that hosts the TigerGraph database, switch to the user of TigerGraph: `sudo su - tigergraph`. If TigerGraph is running on a cluster, you can do this on any one of the machines.
-2. Download the two files https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprFunctions.hpp[tg_ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprUtil.hpp[tg_ExprUtil.hpp].
-+
-[CAUTION]
-====
-If you already have custom UDFs, copy them to those two files. Installing the UDF files will overwrite any UDFs already installed in the database.
-====
-3. In a terminal, run the following command to enable UDF installation:
+. On the machine that hosts the TigerGraph database, switch to the user of TigerGraph: `sudo su - tigergraph`. If TigerGraph is running on a cluster, you can do this on any one of the machines.
+
+. Download the two files https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprFunctions.hpp[tg_ExprFunctions.hpp] and https://raw.githubusercontent.com/tigergraph/gsql-graph-algorithms/tg_4.1.0_dev/UDF/tg_ExprUtil.hpp[tg_ExprUtil.hpp] and save them for later.
+
+. In a terminal, run the following command to enable UDF installation:
 +
 [source, console]
 ----
@@ -467,14 +464,27 @@ gadmin config set GSQL.UDF.Policy.Enable false
 gadmin config apply
 gadmin restart GSQL
 ----
-4. Enter a GSQL shell, and run the following command to install the UDF files.
+
+. Enter a GSQL shell, and run the following command to get the current UDF files.
 +
 [source, console]
 ----
-PUT tg_ExprFunctions FROM "./tg_ExprFunctions.hpp"
-PUT tg_ExprUtil FROM "./tg_ExprUtil.hpp"
+GET ExprFunctions TO "./tg_ExprFunctions_current.hpp"
+GET ExprUtil TO "./tg_ExprUtil_current.hpp"
 ----
-5. Quit the GSQL shell, and run the following command in the terminal to disable UDF installation for security purpose.
+
+. Examine the files you just downloaded to see if they contain any custom UDFs authored by you or someone else in your organization (that is, something other than the example UDFs provided by TigerGraph). If they do, then copy those UDFs into the CoPilot UDF files downloaded in the earlier step, so that the CoPilot UDF files now contain both the currently installed UDFs and the CoPilot UDFs.
+
+. In the GSQL shell, run the following command to install the CoPilot UDF files.
++
+[source, console]
+----
+PUT ExprFunctions FROM "./tg_ExprFunctions.hpp"
+PUT ExprUtil FROM "./tg_ExprUtil.hpp"
+----
+
+. Quit the GSQL shell, and run the following command in the terminal to disable UDF installation for security purpose.
++
 [source, console]
 ----
 gadmin config set GSQL.UDF.EnablePutTgExpr false
