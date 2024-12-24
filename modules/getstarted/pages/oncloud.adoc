@@ -1,7 +1,7 @@
 = On Cloud
 :experimental:
 
-CoPilot is available as an add-on service to your xref:cloudBeta:resource-manager:workspaces/workspace.adoc[Workspace] on TigerGraph Cloud 4.0.
+CoPilot is available as an add-on service to your xref:cloud4:workgroup-workspace:workspaces/workspace.adoc[Workspace] on TigerGraph Cloud 4.0.
 
 [IMPORTANT]
 ====
