@@ -20,7 +20,7 @@ If it is already enabled for your organization, you may proceed to xref:_1_add_t
 == Prerequisites
 
 Users must have TigerGraph Cloud 4.0 access and have created an account.
-See xref:cloudBeta:overview:index.adoc[] to get started xref:cloudBeta:get-started:how2-signup.adoc[creating an account] and xref:cloudBeta:get-started:how2-login.adoc[logging in].
+See xref:cloud4:overview:index.adoc[] to get started xref:cloud4:get-started:how2-signup.adoc[creating an account] and xref:cloud4:get-started:how2-login.adoc[logging in].
 
 . Enable CoPilot for your organization. Go to btn:[Marketplace/Add-ons] on the left navigation panel, and btn:[add] TigerGraph CoPilot.
 +
@@ -66,8 +66,8 @@ The providers added in the “Prerequisites'' section will appear here.
 
 After the workspace is created, TigerGraph CoPilot will be ready as well, but there isn’t much to do until there is data in your database.
 
-Load your data into the database following the instructions  at xref:cloudBeta:load-data:index.adoc[]
-or add a xref:cloudBeta:integrations:solutions.adoc[solution kit] to your database, if you have not already.
+Load your data into the database following the instructions  at xref:cloud4:graph-development:load-data/index.adoc[]
+or add a xref:cloud4:integrations:solutions.adoc[solution kit] to your database, if you have not already.
 
 == Next Steps
 
