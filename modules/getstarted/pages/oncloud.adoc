@@ -5,7 +5,7 @@ CoPilot is available as an add-on service to your xref:cloud4:workgroup-workspac
 
 [IMPORTANT]
 ====
-Contact beta-support@tigergraph.com to enable TigerGraph CoPilot as an option in the xref:cloudBeta:integrations:index.adoc[Marketplace].
+Contact beta-support@tigergraph.com to enable TigerGraph CoPilot as an option in the xref:cloud4:integrations:index.adoc[Marketplace].
 Currently, this will be CoPilot 0.5. CoPilot 0.9 will be available on the cloud soon.
 ====
 
