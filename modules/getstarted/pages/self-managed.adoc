@@ -24,8 +24,8 @@ In order to utilize TigerGraph CoPilot, you will need:
 ====
 For installing Docker and a TigerGraph DB, see our documentation on xref:tigergraph-server:getting-started:docker.adoc[].
 
-For a graph schema and data refer to our xref:gsql-ref:appendix:example-graphs.adoc[] and
-see our documentation on xref:gsql-ref:tutorials:gsql-101/define-a-schema.adoc[Defining a Schema] and xref:gsql-ref:tutorials:gsql-101/load-data-gsql-101.adoc[Loading Data] in the xref:gsql-ref:tutorials:gsql-101/index.adoc[] tutorial.
+For an example graph schema and data, see the link:https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md[GSQL V3 Tutorial].
+
 ====
 
 * An LLM provider and its API key
