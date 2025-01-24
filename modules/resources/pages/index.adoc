@@ -15,7 +15,7 @@ Here you can learn how to get support.
 
 If you are a participating TigerGraph CoPilot user, please review our policy documents:
 
-* xref:cloud4:resources:terms_conditions.adoc[]
+* xref:savanna:resources:terms_conditions.adoc[]
 //* xref:resources:terms_conditions.adoc[(Beta) Terms and Conditions]
 
 == Next Steps
